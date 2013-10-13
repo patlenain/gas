@@ -1,5 +1,8 @@
 imports:
     - { resource: config.yml }
+doctrine:
+    dbal:
+        path:   %database_path%
 
 framework:
     router:
