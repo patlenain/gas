@@ -1,0 +1,5 @@
+patlenain_gas:
+    resource: "@PatlenainGasBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
