@@ -72,5 +72,5 @@ syntaxe *MarkDown*.
 
 ## Licence
 
-La licence sera la *GNU Public Licence or later*.
+La licence sera la *GNU Public Licence version 3 or later*.
 
