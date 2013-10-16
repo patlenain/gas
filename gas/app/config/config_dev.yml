@@ -2,7 +2,7 @@ imports:
     - { resource: config.yml }
 doctrine:
     dbal:
-        path:   %database_path%
+        path:   "%kernel.root_dir%/data/data.db3"
 
 framework:
     router:

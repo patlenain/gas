@@ -1,0 +1,22 @@
+# Traductions en français de GAS
+#
+
+patlenain_gas:
+  title:  Gestion d'Association Simple
+  adherent:
+    nom:    Nom
+    prenom: Prénom
+    email:  Email
+    dateNaissance:  Date de naissance
+    dateAdhesion:   Date d'adhésion
+    list:
+      title:  Liste des adhérents
+    add:
+      title:  Ajouter un adhérent
+    show:
+      title:  Détail d'un adhérent
+  common:
+      edit:   Modifier
+      save:   Enregistrer
+      cancel: Annuler
+      back:   Retour
