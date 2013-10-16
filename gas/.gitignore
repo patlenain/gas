@@ -2,6 +2,8 @@
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
+/app/data
+/*
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
@@ -9,3 +11,4 @@
 /vendor/
 /bin/
 /composer.phar
+/*~
