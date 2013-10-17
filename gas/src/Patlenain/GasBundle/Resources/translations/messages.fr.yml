@@ -9,14 +9,19 @@ patlenain_gas:
     email:  Email
     dateNaissance:  Date de naissance
     dateAdhesion:   Date d'adhésion
+    confirmDelete: Voulez-vous vraiment supprimer cet adhérent ?
     list:
       title:  Liste des adhérents
     add:
       title:  Ajouter un adhérent
+    edit:
+      title:  Modifier un adhérent
     show:
       title:  Détail d'un adhérent
   common:
-      edit:   Modifier
-      save:   Enregistrer
+      add:    Ajouter
       cancel: Annuler
       back:   Retour
+      delete: Supprimer
+      edit:   Modifier
+      save:   Enregistrer

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% spaceless %}
+{% set _title = block('title') %}
+GAS{% if _title is not empty %} | {% endif %}{{ block('title') }}
+{% endspaceless %}
+</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/patlenaingas/css/gas.css') }}" type="text/css" media="all" />
+        {% endblock %}
+        <link rel="icon" type="image/png" href="{{ asset('bundles/patlenaingas/images/icon.png') }}" />
+        {% block javascripts %}
+        {% endblock %}
+        <script type="text/javascript" src="{{ asset('bundles/patlenaingas/js/jquery-1.10.2.min.js') }}" ></script>
+        </head>
+    <body>
+<div id="body">
+	<div id="header">
+		<div id="logo">
+			<a href="{{ path('patlenain_gas_index') }}">
+				<img id="logo" src='{{ asset('bundles/patlenaingas/images/gas_logo.png') }}'
+					alt="{% trans %}patlenain_gas.title{% endtrans %}"
+					title="{% trans %}patlenain_gas.title{% endtrans %}"/>
+			</a>
+		</div>
+	</div>
+	<div>
+		<div id="content">
+			<div class="title">
+				{{ block('icon') }}
+				{{ block('title') }}
+			</div>
+			{% for flashMessage in app.session.flashbag.get('error') %}
+			<div class="flash-error">
+				{{ flashMessage }}
+			</div>
+			{% endfor %}
+			{% for flashMessage in app.session.flashbag.get('notice') %}
+			<div class="flash-notice">
+				{{ flashMessage }}
+			</div>
+			{% endfor %}
+			{% block body %}{% endblock %}
+		</div>
+	</div>
+</div>
+    </body>
+</html>

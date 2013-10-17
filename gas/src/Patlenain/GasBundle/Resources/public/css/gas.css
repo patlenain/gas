@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "Arial", sans-serif;
+	background-color: #eeeeee;
+}
+
+img {
+	border: 0;
+}
+
+div#body {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	width: 900px;
+}
+
+div#logo {
+	text-align: center;
+}
+
+div#header {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	clear: both;
+}
+
+.flash-error {
+	padding: 10px;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+.flash-notice {
+	padding: 10px;
+	font-style: italic;
+}
+
+div.title {
+	font-style: oblique;
+	font-size: 1.1em;
+	font-weight: boldest;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0.7em;
+	border-bottom: 1px solid black;
+}
+
+a:link {
+	text-decoration: underline;
+	color: #0000aa;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0000aa;
+}
+a:active {
+	text-decoration: underline;
+	color: #0000aa;
+}
+a:visited {
+	text-decoration: underline;
+	color: #0000aa;
+}
+
+div.list table {
+	min-width: 200px;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+div.list th, div.list td {
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	border: 1px solid #808080;
+}
+
+div.list thead {
+	font-style: italic;
+	background-color: #d5d5d5;
+}
+
+div.list tr.odd {
+	background-color: #eeeeee;
+}
+
+div.list tr.even {
+	background-color: #eeeeee;
+}
+
+div.list tr.odd:hover, div.list tr.even:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+	cursor: pointer;
+}
+
+label.required:after {
+    content: " *";
+    color: #CC0000;
+}
+
+div label {
+	font-style: italic;
+	padding: 0.2em;
+	width: 10em;
+	min-width: 10em;
+	display: inline-block;
+}
+
+div.boutons {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	text-align: center;
+}
+
+.bouton {
+	background-color: #dddddd;
+	border: 1px solid grey;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor: pointer;
+}
+
+.bouton:hover {
+	background-color: #ffffff;
+}

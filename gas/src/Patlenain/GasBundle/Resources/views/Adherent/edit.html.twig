@@ -1,0 +1,23 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.adherent.edit.title{% endtrans %}{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	{{ form_row(form.id) }}
+	{{ form_row(form.nom) }}
+	{{ form_row(form.prenom) }}
+	{{ form_row(form.email) }}
+	{{ form_row(form.dateNaissance) }}
+	{{ form_row(form.dateAdhesion) }}
+	<div class="boutons">
+		{{ form_widget(form.save) }}
+		{{ form_widget(form.reset) }}
+		<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_adherent_list') }}'"
+			value="{% trans %}patlenain_gas.common.back{% endtrans %}" />
+	</div>
+	{{ form_rest(form) }}
+{{ form_end(form) }}
+{% endblock %}

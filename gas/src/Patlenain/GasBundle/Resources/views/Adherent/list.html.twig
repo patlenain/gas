@@ -1,0 +1,36 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.adherent.list.title{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="list">
+	<table>
+		<thead>
+			<tr>
+				<th>{% trans %}patlenain_gas.adherent.nom{% endtrans %}</th>
+				<th>{% trans %}patlenain_gas.adherent.prenom{% endtrans %}</th>
+				<th>{% trans %}patlenain_gas.adherent.email{% endtrans %}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for adherent in adherents %}
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+				{{ adherent.nom }}
+			</td>
+			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+				{{ adherent.prenom }}
+			</td>
+			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+				{{ adherent.email }}
+			</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<div class="boutons">
+			<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_add')}}';"
+				value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+	</div>
+</div>
+{% endblock body %}
