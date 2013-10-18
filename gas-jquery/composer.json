@@ -1,0 +1,32 @@
+{
+	"name" : "patlenain/gas-jquery",
+	"description" : "Module JQuery pour GAS",
+	"type" : "symfony-bundle",
+	"authors" : [{
+			"name" : "Patrice Le Gurun",
+			"email" : "patrice@legurun.org"
+		}
+	],
+	"keywords" : [
+		"jquery",
+		"gas"
+	],
+	"license" : [
+		"GPL-3.0+"
+	],
+	"require" : {
+		"php" : ">=5.4"
+	},
+	"require-dev" : {
+		"symfony/framework-bundle" : ">=2.3"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Patlenain\\GasJQueryBundle" : ""
+		}
+	},
+	"minimum-stability" : "dev",
+	"support" : {
+		"source" : "https://github.com/patlenain/gas/gas-jquery"
+	}
+}
