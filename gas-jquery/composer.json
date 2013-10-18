@@ -12,6 +12,7 @@
 		"gas"
 	],
 	"license" : [
+		"MIT",
 		"GPL-3.0+"
 	],
 	"require" : {
