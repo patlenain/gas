@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cbd78760ada4fabf6172dcd045801fd9",
+    "hash": "d00d1b86541b8db4a04f3a665486e680",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -468,7 +468,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -836,6 +836,98 @@
                 "psr-3"
             ],
             "time": "2013-07-28 22:38:30"
+        },
+        {
+            "name": "patlenain/gas-jquery",
+            "version": "1.0.0",
+            "target-dir": "Patlenain/GasJQueryBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/patlenain/gas-jquery.git",
+                "reference": "8e39680dcf3de5d61ea730882d9871447d0ba88f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/8e39680dcf3de5d61ea730882d9871447d0ba88f",
+                "reference": "8e39680dcf3de5d61ea730882d9871447d0ba88f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "symfony/framework-bundle": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Patlenain\\GasJQueryBundle": ""
+                }
+            },
+            "license": [
+                "MIT",
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Patrice Le Gurun",
+                    "email": "patrice@legurun.org"
+                }
+            ],
+            "description": "Module JQuery pour GAS",
+            "keywords": [
+                "gas",
+                "jquery"
+            ],
+            "support": {
+                "source": "https://github.com/patlenain/gas-jquery.git"
+            },
+            "time": "2013-10-19 08:56:35"
+        },
+        {
+            "name": "patlenain/gas-jqueryui",
+            "version": "1.0.0",
+            "target-dir": "Patlenain/GasJQueryUIBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/patlenain/gas-jqueryui.git",
+                "reference": "09ae45e9ef40148c43ffd4faaca6e547d5589730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/09ae45e9ef40148c43ffd4faaca6e547d5589730",
+                "reference": "09ae45e9ef40148c43ffd4faaca6e547d5589730",
+                "shasum": ""
+            },
+            "require": {
+                "patlenain/gas-jquery": ">=1.0",
+                "php": ">=5.4",
+                "symfony/framework-bundle": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Patlenain\\GasJQueryUIBundle": ""
+                }
+            },
+            "license": [
+                "MIT",
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Patrice Le Gurun",
+                    "email": "patrice@legurun.org"
+                }
+            ],
+            "description": "Module JQueryUI pour GAS",
+            "keywords": [
+                "gas",
+                "jqueryui"
+            ],
+            "support": {
+                "source": "https://github.com/patlenain/gas-jqueryui.git",
+                "issues": "https://github.com/patlenain/gas-jqueryui/issues"
+            },
+            "time": "2013-10-19 11:53:57"
         },
         {
             "name": "psr/log",

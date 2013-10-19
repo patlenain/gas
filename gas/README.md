@@ -5,8 +5,9 @@ GAS - Gestion d'Association Simple
 # Objectif
 
 
-L'objectif de GAS est de gérer une petite association. Gérer une association
-comprend à la base gérer la liste des membres d'une année en cours.
+L'objectif de [GAS](http://www.legurun.org/projects/gas) est de
+gérer une petite association. Gérer une association comprend à
+la base gérer la liste des membres d'une année en cours.
 
 Par extension, on pourra gérer :
 * les relances d'adhésions
@@ -16,7 +17,8 @@ Par extension, on pourra gérer :
 
 L'architecture devra être modulaire pour permettre ces extensions.
 
-Le choix de [Symfony 2](http://symfony.com/) est basé sur sa modularité et sa maturité. 
+Le choix de [Symfony 2](http://symfony.com/) est basé sur sa modularité
+et sa maturité. 
 
 # TODO
 
