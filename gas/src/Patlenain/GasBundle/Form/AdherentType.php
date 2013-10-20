@@ -15,7 +15,6 @@ class AdherentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', 'hidden')
         	->add('nom', 'text', array('label' => 'patlenain_gas.adherent.nom'))
             ->add('prenom', 'text', array('label' => 'patlenain_gas.adherent.prenom'))
             ->add('email', 'text', array('label' => 'patlenain_gas.adherent.email'))
