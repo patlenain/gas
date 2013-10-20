@@ -89,7 +89,8 @@ class AdherentController extends Controller
 			throw $this->createNotFoundException('Adhérent inconnu');
 		}
 		$form = $this->createForm(new AdherentType(), $adherent, array(
-			'action' => $this->generateUrl('patlenain_gas_adherent_edit'),
+			'action' => $this->generateUrl('patlenain_gas_adherent_edit',
+				array('adherentId' => $adherentId)),
 			'method' => 'post'
 		));
 		if ($request->isMethod('post'))
