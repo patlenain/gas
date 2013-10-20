@@ -36,18 +36,22 @@ GAS{% if _title is not empty %} | {% endif %}{{ block('title') }}
 				{{ block('title') }}
 			</div>
 			{% if app.session.flashbag.has('error') %}
-				<div class="flash-error">
+				<div class="error">
+				<ul>
 				{% for flashMessage in app.session.flashbag.get('error') %}
-					<div>{{ flashMessage }}</div>
+					<li>{{ flashMessage }}</li>
 				{% endfor %}
+				</ul>
 				</div>
 			{% endif %}
 
 			{% if app.session.flashbag.has('notice') %}
-				<div class="flash-notice">
+				<div class="notice">
+				<ul>
 				{% for flashMessage in app.session.flashbag.get('notice') %}
-					<div>{{ flashMessage }}</div>
+					<li>{{ flashMessage }}</li>
 				{% endfor %}
+				</ul>
 				</div>
 			{% endif %}
 			{% block body %}{% endblock %}

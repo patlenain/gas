@@ -29,19 +29,23 @@ div#header {
 	clear: both;
 }
 
-.flash-error {
+div.error {
 	border: 1px solid #ff0000;
-	border-radius: 5px;
+	border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
 	background-color: #ffeeee;
-	padding: 10px;
-	margin: 5px;
+	padding: 0em;
+	margin: 0.5em;
 }
 
-.flash-notice {
+div.notice {
 	border: 1px solid #00ff00;
-	border-radius: 5px;
+	border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
 	background-color: #eeffee;
-	padding: 10px;
+	padding: 0.1em;
 	margin: 5px;
 }
 
@@ -110,12 +114,29 @@ label.required:after {
     color: #CC0000;
 }
 
-div label {
+div.field {
+	padding: 0.1em;
+	margin: 0.2em;
+}
+
+div.field label {
 	font-style: italic;
 	padding: 0.2em;
 	width: 10em;
 	min-width: 10em;
 	display: inline-block;
+}
+
+div.field input {
+	border: 1px solid #888888;
+	padding: 0.2em;
+	border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+}
+
+div.field input.error {
+	border: 1px solid #ff0000;
 }
 
 div.boutons {
@@ -131,9 +152,9 @@ div.boutons {
 .bouton {
 	background-color: #dddddd;
 	border: 1px solid grey;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
 	cursor: pointer;
 }
 
