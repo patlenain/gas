@@ -5,20 +5,35 @@
         <title>{% spaceless %}
 {% set _title = block('title') %}
 GAS{% if _title is not empty %} | {% endif %}{{ block('title') }}
-{% endspaceless %}
-</title>
-        {% block stylesheets %}
+{% endspaceless %}</title>
         <link rel="stylesheet" href="{{ asset('bundles/patlenaingas/css/gas.css') }}" type="text/css" media="all" />
         <link rel="stylesheet" href="{{ asset('bundles/patlenaingasjqueryui/css/jquery-ui.min.css') }}" type="text/css" media="all" />
+        {% block stylesheets %}
         {% endblock %}
         <link rel="icon" type="image/png" href="{{ asset('bundles/patlenaingas/images/icon.png') }}" />
-        {% block javascripts %}
-        {% endblock %}
         <script type="text/javascript" src="{{ asset('bundles/patlenaingasjquery/js/jquery.min.js') }}" ></script>
         <script type="text/javascript" src="{{ asset('bundles/patlenaingasjqueryui/js/jquery-ui.min.js') }}" ></script>
         <script type="text/javascript" src="{{ asset('bundles/patlenaingasjqueryui/js/jquery.ui.datepicker-fr.min.js') }}" ></script>
-        </head>
-    <body>
+        <script type="text/javascript" src="{{ asset('bundles/patlenaingas/js/gas.js') }}" ></script>
+        <script type="text/javascript">
+//<!--
+$.datepicker.setDefaults($.datepicker.regional["fr"]);
+
+$.datepicker.setDefaults({
+	showOn: "button",
+	buttonImageOnly: true,
+	buttonImage: "{{ asset('bundles/patlenaingas/images/calendar.png') }}"
+});
+
+$(document).ready(function() {
+	$(".datepicker").datepicker();
+});
+//-->
+		</script>
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+<body>
 <div id="body">
 	<div id="header">
 		<div id="logo">

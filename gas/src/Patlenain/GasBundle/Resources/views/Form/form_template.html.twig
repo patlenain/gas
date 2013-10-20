@@ -43,3 +43,14 @@
     {% for attrname, attrvalue in attr %}{% if attrname in ['placeholder', 'title'] %}{{ attrname }}="{{ attrvalue|trans({}, translation_domain) }}" {% else %}{{ attrname }}="{{ attrvalue }}" {% endif %}{% endfor %}
 {% endspaceless %}
 {% endblock widget_attributes %}
+
+{% block date_widget %}
+{% spaceless %}
+	{% if attr.class is defined %}
+		{% set attr = attr|merge({class: attr.class ~ ' datepicker'}) %}
+	{% else %}
+		{% set attr = attr|merge({class: 'datepicker'}) %}
+	{% endif %}
+	{{ block('form_widget_simple') }} (jj/mm/aaaa)
+{% endspaceless %}
+{% endblock date_widget %}
