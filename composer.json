@@ -36,7 +36,7 @@
 	"minimum-stability" : "stable",
 	"support" : {
 		"source" : "https://github.com/patlenain/gas",
-		"issues" : "https://github.com/patlenain/gas/"
+		"issues" : "http://www.legurun.org/projects/gas"
 	},
 	"config" : {
 		"bin-dir" : "bin"
