@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d00d1b86541b8db4a04f3a665486e680",
+    "hash": "1faebe3f7cea9ac45958bda0c0a6f086",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -839,17 +839,17 @@
         },
         {
             "name": "patlenain/gas-jquery",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "target-dir": "Patlenain/GasJQueryBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jquery.git",
-                "reference": "8e39680dcf3de5d61ea730882d9871447d0ba88f"
+                "reference": "1777584cf977fba180bfc369bb4f7870f595f93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/8e39680dcf3de5d61ea730882d9871447d0ba88f",
-                "reference": "8e39680dcf3de5d61ea730882d9871447d0ba88f",
+                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/1777584cf977fba180bfc369bb4f7870f595f93a",
+                "reference": "1777584cf977fba180bfc369bb4f7870f595f93a",
                 "shasum": ""
             },
             "require": {
@@ -862,6 +862,7 @@
                     "Patlenain\\GasJQueryBundle": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT",
                 "GPL-3.0+"
@@ -873,28 +874,26 @@
                 }
             ],
             "description": "Module JQuery pour GAS",
+            "homepage": "https://github.com/patlenain/gas/",
             "keywords": [
                 "gas",
                 "jquery"
             ],
-            "support": {
-                "source": "https://github.com/patlenain/gas-jquery.git"
-            },
-            "time": "2013-10-19 08:56:35"
+            "time": "2013-10-19 21:01:52"
         },
         {
             "name": "patlenain/gas-jqueryui",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "target-dir": "Patlenain/GasJQueryUIBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jqueryui.git",
-                "reference": "09ae45e9ef40148c43ffd4faaca6e547d5589730"
+                "reference": "9125c2db13391d052b87e6a63a47aeb59b708ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/09ae45e9ef40148c43ffd4faaca6e547d5589730",
-                "reference": "09ae45e9ef40148c43ffd4faaca6e547d5589730",
+                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/9125c2db13391d052b87e6a63a47aeb59b708ec2",
+                "reference": "9125c2db13391d052b87e6a63a47aeb59b708ec2",
                 "shasum": ""
             },
             "require": {
@@ -908,6 +907,7 @@
                     "Patlenain\\GasJQueryUIBundle": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT",
                 "GPL-3.0+"
@@ -919,15 +919,12 @@
                 }
             ],
             "description": "Module JQueryUI pour GAS",
+            "homepage": "https://github.com/patlenain/gas/",
             "keywords": [
                 "gas",
-                "jqueryui"
+                "jQueryUI"
             ],
-            "support": {
-                "source": "https://github.com/patlenain/gas-jqueryui.git",
-                "issues": "https://github.com/patlenain/gas-jqueryui/issues"
-            },
-            "time": "2013-10-19 11:53:57"
+            "time": "2013-10-19 20:59:57"
         },
         {
             "name": "psr/log",
