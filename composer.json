@@ -35,7 +35,7 @@
 	},
 	"minimum-stability" : "stable",
 	"support" : {
-		"source" : "https://github.com/patlenain/gas",
+		"source" : "https://github.com/patlenain/gas.git",
 		"issues" : "http://www.legurun.org/projects/gas"
 	},
 	"config" : {
