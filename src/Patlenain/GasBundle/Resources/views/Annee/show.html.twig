@@ -1,0 +1,33 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.annee.show.title{% endtrans %}{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+<!--
+function confirmDelete() {
+	if (confirm("{% trans %}patlenain_gas.annee.confirmDelete{% endtrans %}")) {
+		$("#deleteForm").submit();
+	}
+}
+//-->
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="field">
+	<label>{{ 'patlenain_gas.annee.libelle'|trans }}</label>
+	<span>{{ annee.libelle }}</span>
+</div>
+<div class="boutons">
+	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_annee_edit', { anneeId: annee.id }) }}'"
+		value="{% trans %}patlenain_gas.common.edit{% endtrans %}" />
+	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_annee_list') }}'"
+		value="{% trans %}patlenain_gas.common.back{% endtrans %}" />
+	<input class="bouton" type="button" onclick="confirmDelete();"
+		value="{% trans %}patlenain_gas.common.delete{% endtrans %}" />
+</div>
+
+{{ form(delete_form, { 'attr': { 'id': 'deleteForm' }}) }}
+
+{% endblock %}

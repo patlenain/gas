@@ -4,12 +4,16 @@
 patlenain_gas:
   title:  Gestion d'Association Simple
   adherent:
-    nom:    Nom
-    prenom: Prénom
-    email:  Email
+    nom:      Nom
+    prenom:   Prénom
+    adresse:  Adresse
+    codePostal: Code postal
+    ville:    Ville
+    email:    Email
     dateNaissance:  Date de naissance
     dateAdhesion:   Date d'adhésion
-    confirmDelete: Voulez-vous vraiment supprimer cet adhérent ?
+    annee:    Année
+    confirmDelete:  Voulez-vous vraiment supprimer cet adhérent ?
     list:
       title:  Liste des adhérents
     add:
@@ -18,6 +22,17 @@ patlenain_gas:
       title:  Modifier un adhérent
     show:
       title:  Détail d'un adhérent
+  annee:
+    libelle:  Libellé
+    confirmDelete:  Voulez-vous vraiment supprimer cette année ?
+    list:
+      title:  Liste des années
+    add:
+      title:  Ajouter une année
+    edit:
+      title:  Modifier une année
+    show:
+      title:  Détail d'une année
   common:
       add:    Ajouter
       cancel: Annuler

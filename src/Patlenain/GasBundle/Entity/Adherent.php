@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints;
 /**
  * Adherent
  *
- * @ORM\Table()
+ * @ORM\Table(name="adherent")
  * @ORM\Entity(repositoryClass="Patlenain\GasBundle\Entity\AdherentRepository")
  */
 class Adherent
@@ -25,33 +25,59 @@ class Adherent
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=50)
      * @Constraints\NotBlank()
-     * @Constraints\Length(max="255")
+     * @Constraints\Length(max="50")
      */
     private $nom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="prenom", type="string", length=50)
      * @Constraints\NotBlank()
-     * @Constraints\Length(max="255")
+     * @Constraints\Length(max="50")
      */
     private $prenom;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
-     * @Constraints\NotBlank()
+     * @ORM\Column(name="adresse", type="string", length=255)
+     * @Constraints\NotBlank
      * @Constraints\Length(max="255")
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_postal", type="string", length=5)
+     * @Constraints\NotBlank
+     * @Constraints\Length(max="5")
+     */
+    private $codePostal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=255)
+     * @Constraints\NotBlank
+     * @Constraints\Length(max="255")
+     */
+    private $ville;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=50, nullable=true)
+     * @Constraints\Length(max="50")
      * @Constraints\Email()
      */
     private $email;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
      * @ORM\Column(name="dateNaissance", type="date")
      * @Constraints\NotNull()
@@ -60,13 +86,21 @@ class Adherent
     private $dateNaissance;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="dateAdhesion", type="date")
+     * @ORM\Column(name="dateAdhesion", type="date", nullable=true)
      * @Constraints\Date()
      */
     private $dateAdhesion;
 
+    /**
+     * @var Annee
+     *
+     * @ORM\ManyToOne(targetEntity="Annee")
+     * @ORM\JoinColumn(name="annee_id", referencedColumnName="id", nullable=false)
+     * @Constraints\NotNull
+     */
+    private $annee;
 
     /**
      * Get id
@@ -125,6 +159,75 @@ class Adherent
     }
 
     /**
+     * Set adresse
+     *
+     * @param string $adresse
+     * @return Adherent
+     */
+    public function setAdresse($adresse)
+    {
+    	$this->adresse = $adresse;
+
+    	return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+    	return $this->adresse;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param string $codePostal
+     * @return Adherent
+     */
+    public function setCodePostal($codePostal)
+    {
+    	$this->codePostal = $codePostal;
+
+    	return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return string
+     */
+    public function getCodePostal()
+    {
+    	return $this->codePostal;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     * @return Adherent
+     */
+    public function setVille($ville)
+    {
+    	$this->ville = $ville;
+
+    	return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+    	return $this->ville;
+    }
+
+    /**
      * Set email
      *
      * @param string $email
@@ -150,7 +253,7 @@ class Adherent
     /**
      * Set dateNaissance
      *
-     * @param \DateTime $dateNaissance
+     * @param \Date $dateNaissance
      * @return Adherent
      */
     public function setDateNaissance($dateNaissance)
@@ -163,7 +266,7 @@ class Adherent
     /**
      * Get dateNaissance
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateNaissance()
     {
@@ -173,7 +276,7 @@ class Adherent
     /**
      * Set dateAdhesion
      *
-     * @param \DateTime $dateAdhesion
+     * @param \Date $dateAdhesion
      * @return Adherent
      */
     public function setDateAdhesion($dateAdhesion)
@@ -186,10 +289,33 @@ class Adherent
     /**
      * Get dateAdhesion
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateAdhesion()
     {
         return $this->dateAdhesion;
+    }
+
+    /**
+     * Set annee
+     *
+     * @param Annee $annee
+     * @return Adherent
+     */
+    public function setAnnee($annee)
+    {
+        $this->annee = $annee;
+
+        return $this;
+    }
+
+    /**
+     * Get annee
+     *
+     * @return Annee
+     */
+    public function getAnnee()
+    {
+        return $this->annee;
     }
 }

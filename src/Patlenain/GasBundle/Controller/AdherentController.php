@@ -10,7 +10,6 @@ use Patlenain\GasBundle\Entity\Adherent;
 use Patlenain\GasBundle\Form\AdherentType;
 use Patlenain\GasBundle\Manager\AdherentManager;
 use Symfony\Bridge\Monolog\Logger;
-use Patlenain\GasBundle\Form\AdherentDeleteType;
 
 /**
  * @Route("/adherent")
@@ -70,7 +69,7 @@ class AdherentController extends Controller
 				$this->get('patlenain_gas.adherent_manager')->saveAdherent($adherent);
 				$this->get('session')->getFlashBag()->add('notice', 'Adhérent ajouté');
 				return $this->redirect($this->generateUrl('patlenain_gas_adherent_show',
-						array( 'adherentId' => $adherent->id)));
+						array( 'adherentId' => $adherent->getId())));
 			}
 		}
 		return array('form' => $form->createView(), 'adherent' => $adherent);

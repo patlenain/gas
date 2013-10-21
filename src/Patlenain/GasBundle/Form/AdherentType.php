@@ -15,17 +15,38 @@ class AdherentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        	->add('nom', 'text', array('label' => 'patlenain_gas.adherent.nom'))
-            ->add('prenom', 'text', array('label' => 'patlenain_gas.adherent.prenom'))
-            ->add('email', 'text', array('label' => 'patlenain_gas.adherent.email'))
-            ->add('dateNaissance', 'birthday', array(
+        	->add('nom', 'text', array(
+        			'label' => 'patlenain_gas.adherent.nom',
+        			'max_length' => 50))
+            ->add('prenom', 'text', array(
+            		'label' => 'patlenain_gas.adherent.prenom',
+            		'max_length' => 50))
+            ->add('adresse', 'textarea', array(
+            		'label' => 'patlenain_gas.adherent.adresse',
+            		'max_length' => 255,
+					'attr' => array('cols' => 60, 'rows' => 4)))
+            ->add('codePostal', 'text', array(
+            		'label' => 'patlenain_gas.adherent.codePostal',
+            		'max_length' => 5))
+            ->add('ville', 'text', array(
+            		'label' => 'patlenain_gas.adherent.ville',
+            		'max_length' => 255))
+			->add('email', 'text', array(
+            		'label' => 'patlenain_gas.adherent.email',
+            		'required' => false,
+            		'max_length' => 50))
+            ->add('dateNaissance', 'date', array(
             		'widget' => 'single_text',
             		'format' => 'dd/MM/yyyy',
             		'label' => 'patlenain_gas.adherent.dateNaissance'))
             ->add('dateAdhesion', 'date', array(
             		'widget' => 'single_text',
             		'format' => 'dd/MM/yyyy',
-            		'label' => 'patlenain_gas.adherent.dateAdhesion'))
+            		'label' => 'patlenain_gas.adherent.dateAdhesion',
+            		'required' => false))
+			->add('annee', 'entity', array(
+					'class' => 'PatlenainGasBundle:Annee',
+					'property' => 'libelle'))
             ->add('save', 'submit', array(
             		'label' => 'patlenain_gas.common.save',
             		'attr' => array('class' => 'bouton')))

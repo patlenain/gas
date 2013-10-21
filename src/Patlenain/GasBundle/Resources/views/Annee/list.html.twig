@@ -1,0 +1,28 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.annee.list.title{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="list">
+	<table>
+		<thead>
+			<tr>
+				<th style="width: 20%;">{% trans %}patlenain_gas.annee.libelle{% endtrans %}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for annee in annees %}
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_annee_show', {'anneeId': annee.id}) }}';">
+				{{ annee.libelle }}
+			</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<div class="boutons">
+			<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_annee_add')}}';"
+				value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+	</div>
+</div>
+{% endblock body %}

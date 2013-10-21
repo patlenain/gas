@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class AdherentDeleteType extends AbstractType
+class AnneeType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,7 +15,15 @@ class AdherentDeleteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', 'hidden')
+        	->add('libelle', 'text', array(
+        			'label' => 'patlenain_gas.annee.libelle',
+        			'max_length' => 50))
+            ->add('save', 'submit', array(
+            		'label' => 'patlenain_gas.common.save',
+            		'attr' => array('class' => 'bouton')))
+            ->add('reset', 'reset', array(
+            		'label' => 'patlenain_gas.common.cancel',
+            		'attr' => array('class' => 'bouton')))
         ;
     }
 
@@ -25,7 +33,7 @@ class AdherentDeleteType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Patlenain\GasBundle\Entity\Adherent'
+            'data_class' => 'Patlenain\GasBundle\Entity\Annee'
         ));
     }
 
@@ -34,6 +42,6 @@ class AdherentDeleteType extends AbstractType
      */
     public function getName()
     {
-        return 'patlenain_gasbundle_adherent_delete';
+        return 'patlenain_gasbundle_annee';
     }
 }

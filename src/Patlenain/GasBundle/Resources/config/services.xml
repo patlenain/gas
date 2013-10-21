@@ -6,10 +6,14 @@
 
     <parameters>
         <parameter key="patlenain_gas.adherent_manager.class">Patlenain\GasBundle\Manager\AdherentManager</parameter>
+        <parameter key="patlenain_gas.annee_manager.class">Patlenain\GasBundle\Manager\AnneeManager</parameter>
     </parameters>
 
     <services>
         <service id="patlenain_gas.adherent_manager" class="%patlenain_gas.adherent_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+        <service id="patlenain_gas.annee_manager" class="%patlenain_gas.annee_manager.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
         </service>
     </services>

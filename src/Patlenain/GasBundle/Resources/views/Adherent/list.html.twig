@@ -10,19 +10,28 @@
 				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.nom{% endtrans %}</th>
 				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.prenom{% endtrans %}</th>
 				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.email{% endtrans %}</th>
+				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.codePostal{% endtrans %}</th>
+				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.ville{% endtrans %}</th>
 			</tr>
 		</thead>
 		<tbody>
 		{% for adherent in adherents %}
-		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
-			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}"
+			onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+			<td>
 				{{ adherent.nom }}
 			</td>
-			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+			<td>
 				{{ adherent.prenom }}
 			</td>
-			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
+			<td>
 				{{ adherent.email }}
+			</td>
+			<td>
+				{{ adherent.codePostal }}
+			</td>
+			<td>
+				{{ adherent.ville }}
 			</td>
 		</tr>
 		{% endfor %}

@@ -15,25 +15,37 @@ function confirmDelete() {
 {% endblock %}
 
 {% block body %}
-<div>
+<div class="field">
 	<label>{{ 'patlenain_gas.adherent.nom'|trans }}</label>
 	<span>{{ adherent.nom }}</span>
 </div>
-<div>
-	<label>{{ 'patlenain_gas.adherent.nom'|trans }}</label>
+<div class="field">
+	<label>{{ 'patlenain_gas.adherent.prenom'|trans }}</label>
 	<span>{{ adherent.prenom }}</span>
 </div>
-<div>
+<div class="field">
+	<label>{{ 'patlenain_gas.adherent.adresse'|trans }}</label>
+	<span>{{ adherent.adresse|nl2br }}</span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.adherent.codePostal'|trans }} / {{ 'patlenain_gas.adherent.ville'|trans }}</label>
+	<span>{{ adherent.codePostal }} / {{ adherent.ville }}</span>
+</div>
+<div class="field">
 	<label>{{ 'patlenain_gas.adherent.email'|trans }}</label>
 	<span><a href="mailto:{{adherent.email}}">{{ adherent.email }}</a></span>
 </div>
-<div>
+<div class="field">
 	<label>{{ 'patlenain_gas.adherent.dateNaissance'|trans }}</label>
 	<span>{{ adherent.dateNaissance | date('d/m/Y') }}</span>
 </div>
-<div>
+<div class="field">
 	<label>{{ 'patlenain_gas.adherent.dateAdhesion'|trans }}</label>
 	<span>{{ adherent.dateAdhesion | date('d/m/Y') }}</span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.adherent.annee'|trans }}</label>
+	<span>{{ adherent.annee.libelle }}</span>
 </div>
 <div class="boutons">
 	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_adherent_edit', { adherentId: adherent.id }) }}'"

@@ -4,7 +4,7 @@ namespace Patlenain\GasBundle\Manager;
 
 use Doctrine\ORM\EntityManager;
 
-class AdherentManager {
+class AnneeManager {
 	/**
 	 * @var EntityManager
 	 */
@@ -21,7 +21,7 @@ class AdherentManager {
 	/**
 	 * @return array
 	 */
-	public function listAdherents()
+	public function listAnnees()
 	{
 		return $this->getRepository()
 			->listAll()
@@ -31,37 +31,37 @@ class AdherentManager {
 
 	/**
 	 * @param integer $id
-	 * @return Adherent
+	 * @return Annee
 	 */
-	public function loadAdherent($id)
+	public function loadAnnee($id)
 	{
 		return $this->getRepository()->findOneBy(array('id' => $id));
 	}
 
 	/**
 	 *
-	 * @param Adherent $adherent
+	 * @param Annee $annee
 	 */
-	public function saveAdherent($adherent)
+	public function saveAnnee($annee)
 	{
-		$this->em->persist($adherent);
+		$this->em->persist($annee);
 		$this->em->flush();
 	}
 
 	/**
-	 * @param Adherent $adherent
+	 * @param Annee $annee
 	 */
-	public function deleteAdherent($adherent)
+	public function deleteAnnee($annee)
 	{
-		$this->em->remove($adherent);
+		$this->em->remove($annee);
 		$this->em->flush();
 	}
 
 	/**
-	 * @return AdherentRepository
+	 * @return AnneeRepository
 	 */
 	public function getRepository()
 	{
-		return $this->em->getRepository('PatlenainGasBundle:Adherent');
+		return $this->em->getRepository('PatlenainGasBundle:Annee');
 	}
 }
