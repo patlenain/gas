@@ -1,0 +1,33 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.utilisateur.list.title{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="list">
+	<table>
+		<thead>
+			<tr>
+				<th style="width: 20%;">{% trans %}patlenain_gas.utilisateur.username{% endtrans %}</th>
+				<th style="width: 20%;">{% trans %}patlenain_gas.utilisateur.nom{% endtrans %}</th>
+				<th style="width: 20%;">{% trans %}patlenain_gas.utilisateur.email{% endtrans %}</th>
+				<th style="width: 20%;">{% trans %}patlenain_gas.utilisateur.admin{% endtrans %}</th>
+				</tr>
+		</thead>
+		<tbody>
+		{% for utilisateur in utilisateurs %}
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}"
+			onclick="javascript:window.location.href = '{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}';">
+			<td>{{ utilisateur.username }}</td>
+			<td>{{ utilisateur.nom }}</td>
+			<td>{{ utilisateur.email }}</td>
+			<td>{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.oui')|trans }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<div class="boutons">
+			<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_utilisateur_add')}}';"
+				value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+	</div>
+</div>
+{% endblock body %}

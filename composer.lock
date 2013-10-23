@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b25e31e5b939114f10cc007c0169a313",
+    "hash": "2fa9a2e0a81ea014b3e8d216fe521681",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -839,17 +839,17 @@
         },
         {
             "name": "patlenain/gas-jquery",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "target-dir": "Patlenain/GasJQueryBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jquery.git",
-                "reference": "1777584cf977fba180bfc369bb4f7870f595f93a"
+                "reference": "4f9f5054b442d772c292a57bac858482f3780a9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/1777584cf977fba180bfc369bb4f7870f595f93a",
-                "reference": "1777584cf977fba180bfc369bb4f7870f595f93a",
+                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/4f9f5054b442d772c292a57bac858482f3780a9f",
+                "reference": "4f9f5054b442d772c292a57bac858482f3780a9f",
                 "shasum": ""
             },
             "require": {
@@ -869,31 +869,32 @@
             ],
             "authors": [
                 {
-                    "name": "Patrice Le Gurun",
-                    "email": "patrice@legurun.org"
+                    "name": "patlenain",
+                    "email": "patrice@legurun.org",
+                    "role": "Developer"
                 }
             ],
             "description": "Module JQuery pour GAS",
-            "homepage": "https://github.com/patlenain/gas/",
+            "homepage": "http://www.legurun.org/projects/gas",
             "keywords": [
                 "gas",
                 "jquery"
             ],
-            "time": "2013-10-19 21:01:52"
+            "time": "2013-10-21 18:04:06"
         },
         {
             "name": "patlenain/gas-jqueryui",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "target-dir": "Patlenain/GasJQueryUIBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jqueryui.git",
-                "reference": "9125c2db13391d052b87e6a63a47aeb59b708ec2"
+                "reference": "2849687c3a5b267273a0c694ee7b8b3b65698b11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/9125c2db13391d052b87e6a63a47aeb59b708ec2",
-                "reference": "9125c2db13391d052b87e6a63a47aeb59b708ec2",
+                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/2849687c3a5b267273a0c694ee7b8b3b65698b11",
+                "reference": "2849687c3a5b267273a0c694ee7b8b3b65698b11",
                 "shasum": ""
             },
             "require": {
@@ -914,17 +915,18 @@
             ],
             "authors": [
                 {
-                    "name": "Patrice Le Gurun",
-                    "email": "patrice@legurun.org"
+                    "name": "patlenain",
+                    "email": "patrice@legurun.org",
+                    "role": "Developer"
                 }
             ],
             "description": "Module JQueryUI pour GAS",
-            "homepage": "https://github.com/patlenain/gas/",
+            "homepage": "http://www.legurun.org/projects/gas",
             "keywords": [
                 "gas",
                 "jQueryUI"
             ],
-            "time": "2013-10-19 20:59:57"
+            "time": "2013-10-21 18:03:56"
         },
         {
             "name": "psr/log",

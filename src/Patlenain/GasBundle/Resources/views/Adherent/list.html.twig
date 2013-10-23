@@ -18,21 +18,11 @@
 		{% for adherent in adherents %}
 		<tr class="{{ cycle(['odd', 'even'], loop.index) }}"
 			onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
-			<td>
-				{{ adherent.nom }}
-			</td>
-			<td>
-				{{ adherent.prenom }}
-			</td>
-			<td>
-				{{ adherent.email }}
-			</td>
-			<td>
-				{{ adherent.codePostal }}
-			</td>
-			<td>
-				{{ adherent.ville }}
-			</td>
+			<td>{{ adherent.nom }}</td>
+			<td>{{ adherent.prenom }}</td>
+			<td>{{ adherent.email }}</td>
+			<td>{{ adherent.codePostal }}</td>
+			<td>{{ adherent.ville }}</td>
 		</tr>
 		{% endfor %}
 		</tbody>

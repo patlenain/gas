@@ -80,6 +80,8 @@ div.list table {
 	min-width: 200px;
 	border-collapse: collapse;
 	border: 1px solid black;
+	padding: 0.1em;
+	margin: 0.2em;
 }
 
 div.list th, div.list td {
@@ -154,7 +156,7 @@ div.field textarea {
 	-webkit-border-radius: 0.3em;
 }
 
-div.field texxtarea.error {
+div.field textarea.error {
 	border: 1px solid #ff0000;
 }
 

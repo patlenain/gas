@@ -1,0 +1,45 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.utilisateur.show.title{% endtrans %}{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+<!--
+function confirmDelete() {
+	if (confirm("{% trans %}patlenain_gas.utilisateur.confirmDelete{% endtrans %}")) {
+		$("#deleteForm").submit();
+	}
+}
+//-->
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="field">
+	<label>{{ 'patlenain_gas.utilisateur.username'|trans }}</label>
+	<span>{{ utilisateur.username }}</span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.utilisateur.nom'|trans }}</label>
+	<span>{{ utilisateur.nom }}</span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.utilisateur.email'|trans }}</label>
+	<span><a href="mailto:{{ utilisateur.email }}">{{ utilisateur.email }}</a></span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.utilisateur.admin'|trans }}</label>
+	<span>{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.oui')|trans }}</span>
+</div>
+<div class="boutons">
+	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_utilisateur_edit', { utilisateurId: utilisateur.id }) }}'"
+		value="{% trans %}patlenain_gas.common.edit{% endtrans %}" />
+	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_utilisateur_list') }}'"
+		value="{% trans %}patlenain_gas.common.back{% endtrans %}" />
+	<input class="bouton" type="button" onclick="confirmDelete();"
+		value="{% trans %}patlenain_gas.common.delete{% endtrans %}" />
+</div>
+
+{{ form(delete_form, { 'attr': { 'id': 'deleteForm' }}) }}
+
+{% endblock %}

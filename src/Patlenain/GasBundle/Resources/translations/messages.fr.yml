@@ -39,4 +39,27 @@ patlenain_gas:
       back:   Retour
       delete: Supprimer
       edit:   Modifier
+      oui:    Oui
+      non:    Non
       save:   Enregistrer
+  utilisateur:
+    username:   Identifiant
+    usernameRegex:  L'identifiant ne doit contenir que des lettres et des chiffres.
+    nom:        Nom
+    email:      Email
+    password:   Mot de passe
+    password2:  Confirmer le mot de passe
+    passwordMinLength:  Le mot de passe doit faire au moins 6 caractères.
+    passwordStrength:   Le mot de passe doit contenir au moins un chiffre, une lettre majuscule et une lettre minuscule.
+    admin:      Administrateur
+    passwordMustMatch:  Les mots de passe sont différents.
+    confirmDelete:  Voulez-vous vraiment supprimer cet utilisateur ?
+    list:
+      title:  Liste des utilisateurs
+    add:
+      title:  Ajouter un utilisateur
+    edit:
+      title:  Modifier un utilisateur
+    show:
+      title:  Détail d'un utilisateur
+      
