@@ -2,6 +2,7 @@
 namespace Patlenain\GasBundle\DataFixtures\ORM\initial;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Patlenain\GasBundle\Entity\Utilisateur;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
