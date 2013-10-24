@@ -14,6 +14,7 @@
 	],
 	"require" : {
 		"symfony/symfony" : "2.3.*",
+		"doctrine/doctrine-fixtures-bundle" : ">=2.2.0",
 		"patlenain/gas-jqueryui" : ">=1.0",
 		"symfony/swiftmailer-bundle" : "2.3.*",
 		"patlenain/gas-jquery" : ">=1.0",
