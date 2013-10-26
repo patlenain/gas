@@ -68,7 +68,7 @@ class Utilisateur implements UserInterface
      *
      * @ORM\Column(name="password", type="string", length=128)
      * @Constraints\Length(min=6)
-     * @Constraints\Regex(pattern="/(?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).*$/",
+     * @Constraints\Regex(pattern="/^\S*(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/",
      * 		message="patlenain_gas.utilisateur.passwordStrength")
      */
     private $password;
