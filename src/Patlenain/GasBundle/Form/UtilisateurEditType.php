@@ -62,6 +62,6 @@ class UtilisateurEditType extends AbstractType
      */
     public function getName()
     {
-        return 'patlenain_gasbundle_utilisateur';
+        return 'patlenain_gasbundle_utilisateur_edit';
     }
 }
