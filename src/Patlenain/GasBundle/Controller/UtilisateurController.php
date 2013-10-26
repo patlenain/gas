@@ -2,11 +2,11 @@
 
 namespace Patlenain\GasBundle\Controller;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Patlenain\GasBundle\Entity\Utilisateur;
 use Patlenain\GasBundle\Form\UtilisateurEditType;
 use Patlenain\GasBundle\Form\UtilisateurNewType;
 use Patlenain\GasBundle\Manager\UtilisateurManager;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bridge\Monolog\Logger;
@@ -19,6 +19,7 @@ class UtilisateurController extends Controller
 {
     /**
      * @Route("/", name="patlenain_gas_utilisateur_index")
+	 * @Secure(roles="ROLE_ADMIN")
      */
     public function indexAction()
     {
@@ -28,6 +29,7 @@ class UtilisateurController extends Controller
     /**
      * @Route("/list", name="patlenain_gas_utilisateur_list")
      * @Template
+	 * @Secure(roles="ROLE_ADMIN")
      */
     public function listAction()
     {
@@ -38,6 +40,7 @@ class UtilisateurController extends Controller
     /**
      * @Route("/show/{utilisateurId}", name="patlenain_gas_utilisateur_show")
      * @Template
+	 * @Secure(roles="ROLE_ADMIN")
      */
     public function showAction($utilisateurId) {
 		$request = $this->get('request');
@@ -53,6 +56,7 @@ class UtilisateurController extends Controller
     /**
 	 * @Route("/new", name="patlenain_gas_utilisateur_add")
 	 * @Template()
+	 * @Secure(roles="ROLE_ADMIN")
 	 */
 	public function newAction()
 	{
@@ -83,6 +87,7 @@ class UtilisateurController extends Controller
     /**
 	 * @Route("/edit/{utilisateurId}", name="patlenain_gas_utilisateur_edit")
 	 * @Template()
+	 * @Secure(roles="ROLE_ADMIN")
 	 */
 	public function editAction($utilisateurId)
 	{
@@ -123,7 +128,8 @@ class UtilisateurController extends Controller
 
 	/**
 	 * @Route("/delete/{utilisateurId}", name="patlenain_gas_utilisateur_delete")
-	 * @Method("post")
+	 * @Template()
+	 * @Secure(roles="ROLE_ADMIN")
 	 */
 	public function deleteAction($utilisateurId)
 	{

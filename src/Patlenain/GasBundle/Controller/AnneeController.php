@@ -3,13 +3,13 @@
 namespace Patlenain\GasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Patlenain\GasBundle\Entity\Annee;
 use Patlenain\GasBundle\Form\AnneeType;
 use Patlenain\GasBundle\Manager\AnneeManager;
 use Symfony\Bridge\Monolog\Logger;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * @Route("/annee")
@@ -18,6 +18,7 @@ class AnneeController extends Controller
 {
     /**
      * @Route("/", name="patlenain_gas_annee_index")
+	 * @Secure(roles="ROLE_USER")
      */
     public function indexAction()
     {
@@ -27,6 +28,7 @@ class AnneeController extends Controller
     /**
      * @Route("/list", name="patlenain_gas_annee_list")
      * @Template
+	 * @Secure(roles="ROLE_USER")
      */
     public function listAction()
     {
@@ -37,6 +39,7 @@ class AnneeController extends Controller
     /**
      * @Route("/show/{anneeId}", name="patlenain_gas_annee_show")
      * @Template
+	 * @Secure(roles="ROLE_USER")
      */
     public function showAction($anneeId) {
 		$request = $this->get('request');
@@ -52,6 +55,7 @@ class AnneeController extends Controller
     /**
 	 * @Route("/new", name="patlenain_gas_annee_add")
 	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function newAction()
 	{
@@ -79,6 +83,7 @@ class AnneeController extends Controller
     /**
 	 * @Route("/edit/{anneeId}", name="patlenain_gas_annee_edit")
 	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function editAction($anneeId)
 	{
@@ -108,7 +113,8 @@ class AnneeController extends Controller
 
 	/**
 	 * @Route("/delete/{anneeId}", name="patlenain_gas_annee_delete")
-	 * @Method("post")
+	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function deleteAction($anneeId)
 	{

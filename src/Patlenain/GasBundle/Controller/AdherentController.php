@@ -3,13 +3,13 @@
 namespace Patlenain\GasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Patlenain\GasBundle\Entity\Adherent;
 use Patlenain\GasBundle\Form\AdherentType;
 use Patlenain\GasBundle\Manager\AdherentManager;
 use Symfony\Bridge\Monolog\Logger;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * @Route("/adherent")
@@ -18,6 +18,7 @@ class AdherentController extends Controller
 {
     /**
      * @Route("/", name="patlenain_gas_adherent_index")
+	 * @Secure(roles="ROLE_USER")
      */
     public function indexAction()
     {
@@ -27,6 +28,7 @@ class AdherentController extends Controller
     /**
      * @Route("/list", name="patlenain_gas_adherent_list")
      * @Template
+	 * @Secure(roles="ROLE_USER")
      */
     public function listAction()
     {
@@ -37,6 +39,7 @@ class AdherentController extends Controller
     /**
      * @Route("/show/{adherentId}", name="patlenain_gas_adherent_show")
      * @Template
+	 * @Secure(roles="ROLE_USER")
      */
     public function showAction($adherentId) {
 		$request = $this->get('request');
@@ -52,6 +55,7 @@ class AdherentController extends Controller
     /**
 	 * @Route("/new", name="patlenain_gas_adherent_add")
 	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function newAction()
 	{
@@ -79,6 +83,7 @@ class AdherentController extends Controller
     /**
 	 * @Route("/edit/{adherentId}", name="patlenain_gas_adherent_edit")
 	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function editAction($adherentId)
 	{
@@ -108,7 +113,8 @@ class AdherentController extends Controller
 
 	/**
 	 * @Route("/delete/{adherentId}", name="patlenain_gas_adherent_delete")
-	 * @Method("post")
+	 * @Template()
+	 * @Secure(roles="ROLE_USER")
 	 */
 	public function deleteAction($adherentId)
 	{

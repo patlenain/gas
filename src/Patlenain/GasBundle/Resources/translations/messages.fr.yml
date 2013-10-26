@@ -42,6 +42,16 @@ patlenain_gas:
       oui:    Oui
       non:    Non
       save:   Enregistrer
+  login:
+      login:    Connexion
+      username: Identifiant
+      password: Mot de passe
+      title:    Connexion
+  logout:
+      logout: Vous êtes maintenant déconnectés
+      title:  Déconnexion
+  preferences:
+      title:  Préférences
   utilisateur:
     username:   Identifiant
     usernameRegex:  L'identifiant ne doit contenir que des lettres et des chiffres.
@@ -62,4 +72,4 @@ patlenain_gas:
       title:  Modifier un utilisateur
     show:
       title:  Détail d'un utilisateur
-      
+Bad credentials: L'identifiant et le mot de passe ne correspondent pas

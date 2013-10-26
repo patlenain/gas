@@ -14,6 +14,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->redirect($this->generateUrl('patlenain_gas_adherent_index'));
+        return array();
     }
 }
