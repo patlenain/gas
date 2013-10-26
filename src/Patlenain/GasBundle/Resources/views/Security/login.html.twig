@@ -1,0 +1,20 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.login.title{% endtrans %}{% endblock %}
+
+{% block body %}
+<form method="post" action="{{ path('patlenain_gas_login_check') }}">
+	<div class="field">
+		<label for="_username" class="required">{{ 'patlenain_gas.login.username'|trans }}</label>
+		<input type="text" id="_username" name="_username" required="required" maxlength="32" />
+	</div>
+	<div class="field">
+		<label for="_password" class="required">{{ 'patlenain_gas.login.password'|trans }}</label>
+		<input type="password" id="_password" name="_password" required="required" maxlength="255" />
+	</div>
+	<div class="boutons">
+		<button type="submit" id="_login" name="_login" class="bouton">{{ 'patlenain_gas.login.login'|trans }}</button>
+		<button type="reset" id="_reset" name="_reset" class="bouton">{{ 'patlenain_gas.common.cancel'|trans }}</button>
+	</div>
+</form>
+{% endblock %}
