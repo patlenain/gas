@@ -29,7 +29,7 @@ function confirmDelete() {
 </div>
 <div class="field">
 	<label>{{ 'patlenain_gas.utilisateur.admin'|trans }}</label>
-	<span>{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.oui')|trans }}</span>
+	<span>{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.non')|trans }}</span>
 </div>
 <div class="boutons">
 	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_utilisateur_edit', { utilisateurId: utilisateur.id }) }}'"
