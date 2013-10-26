@@ -33,7 +33,8 @@ class SecurityController extends Controller
 			$this->get('session')->getFlashBag()->add('error', $error->getMessage());
     	}
 	   	return array(
-    		'username' => $session->get(SecurityContext::LAST_USERNAME)
+    		'username' => $session->get(SecurityContext::LAST_USERNAME),
+   			'csrf_token' => $this->get('form.csrf_provider')->generateCsrfToken('authenticate')
     	);
     }
 

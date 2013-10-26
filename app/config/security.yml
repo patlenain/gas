@@ -28,7 +28,7 @@ security:
                 check_path: patlenain_gas_login_check
                 login_path: patlenain_gas_login
                 post_only:  true
-#                crsf_provider:  form.crsf_provider
+                csrf_provider:  form.csrf_provider
             logout:
                 path:   patlenain_gas_logout
                 target: patlenain_gas_index

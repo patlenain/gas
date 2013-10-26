@@ -6,12 +6,13 @@
 <form method="post" action="{{ path('patlenain_gas_login_check') }}">
 	<div class="field">
 		<label for="_username" class="required">{{ 'patlenain_gas.login.username'|trans }}</label>
-		<input type="text" id="_username" name="_username" required="required" maxlength="32" />
+		<input type="text" id="_username" name="_username" value="{{ username }}" required="required" maxlength="32" />
 	</div>
 	<div class="field">
 		<label for="_password" class="required">{{ 'patlenain_gas.login.password'|trans }}</label>
 		<input type="password" id="_password" name="_password" required="required" maxlength="255" />
 	</div>
+	<input type="hidden" id="csrf_token" name="_csrf_token" value="{{ csrf_token }}">
 	<div class="boutons">
 		<button type="submit" id="_login" name="_login" class="bouton">{{ 'patlenain_gas.login.login'|trans }}</button>
 		<button type="reset" id="_reset" name="_reset" class="bouton">{{ 'patlenain_gas.common.cancel'|trans }}</button>
