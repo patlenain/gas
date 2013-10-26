@@ -195,6 +195,7 @@ class Utilisateur implements UserInterface
 
     public function eraseCredentials()
     {
+    	$this->password = null;
     }
 
     /**
