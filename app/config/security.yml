@@ -19,7 +19,7 @@ security:
             security: false
 
         login:
-            pattern:  ^/(login|logout)$
+            pattern:  ^/(login|logoutConfirm)$
             security: false
 
         secured_area:
@@ -31,4 +31,4 @@ security:
                 csrf_provider:  form.csrf_provider
             logout:
                 path:   patlenain_gas_logout
-                target: patlenain_gas_index
+                target: patlenain_gas_logout_confirm

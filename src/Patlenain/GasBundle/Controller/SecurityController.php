@@ -48,14 +48,22 @@ class SecurityController extends Controller
 
     /**
      * @Route("/logout", name="patlenain_gas_logout")
-     * @Template()
      */
     public function logoutAction()
     {
     	return array();
     }
 
-	/**
+    /**
+     * @Route("/logoutConfirm", name="patlenain_gas_logout_confirm")
+     * @Template()
+     */
+    public function logoutConfirmAction()
+    {
+    	return array();
+    }
+
+    /**
 	 * @Route("/preferences", name="patlenain_gas_preferences")
 	 * @Template()
 	 * @Secure(roles="ROLE_USER")
