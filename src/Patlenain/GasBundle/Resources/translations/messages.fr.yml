@@ -43,10 +43,11 @@ patlenain_gas:
       non:    Non
       save:   Enregistrer
   login:
-      login:    Connexion
-      username: Identifiant
-      password: Mot de passe
-      title:    Connexion
+      login:      Connexion
+      username:   Identifiant
+      password:   Mot de passe
+      rememberMe: Connexion automatique
+      title:      Connexion
   logout:
       logout: Vous êtes maintenant déconnectés
       title:  Déconnexion

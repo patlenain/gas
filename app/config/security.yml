@@ -32,3 +32,8 @@ security:
             logout:
                 path:   patlenain_gas_logout
                 target: patlenain_gas_logout_confirm
+            remember_me:
+                key:        "%secret%"
+                lifetime:   2592000
+                path:       /
+                domain:     ~

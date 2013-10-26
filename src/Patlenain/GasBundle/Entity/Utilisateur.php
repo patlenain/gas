@@ -195,7 +195,8 @@ class Utilisateur implements UserInterface
 
     public function eraseCredentials()
     {
-    	$this->password = null;
+    	// Ne pas effacer le mot de passe, sinon la
+    	// fonctionnalité Remember me ne fonctionne plus
     }
 
     /**
