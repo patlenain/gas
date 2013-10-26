@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use JMS\SecurityExtraBundle\JMSSecurityExtraBundle;
 
 class AppKernel extends Kernel
 {
@@ -17,6 +18,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
         	new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+        	new JMS\AopBundle\JMSAopBundle(),
+        	new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+        	new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new Patlenain\GasBundle\PatlenainGasBundle(),
         	new Patlenain\GasJQueryBundle\PatlenainGasJQueryBundle(),
         	new Patlenain\GasJQueryUIBundle\PatlenainGasJQueryUIBundle()

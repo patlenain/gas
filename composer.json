@@ -19,6 +19,7 @@
 		"symfony/swiftmailer-bundle" : "2.3.*",
 		"patlenain/gas-jquery" : ">=1.0",
 		"doctrine/orm" : ">=2.2.3,<2.4-dev",
+		"jms/security-extra-bundle" : ">=1.5.1",
 		"symfony/assetic-bundle" : "2.3.*",
 		"incenteev/composer-parameter-handler" : "~2.0",
 		"twig/extensions" : "1.0.*",
