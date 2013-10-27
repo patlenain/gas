@@ -19,7 +19,20 @@ div#body {
 }
 
 div#logo {
+	float: left;
 	text-align: center;
+}
+
+div#userInfo {
+	float: right;
+}
+
+div#userInfo span {
+	cursor: pointer;
+}
+
+div#userInfo span:hover {
+	color: #b0b0b0;
 }
 
 div#header {
@@ -190,6 +203,7 @@ div.boutons {
 	padding-bottom: 0.5em;
 	margin-top: 1em;
 	margin-bottom: 1em;
+	height: 1.3em;
 }
 
 .menu-item {
