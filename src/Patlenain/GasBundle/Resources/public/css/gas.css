@@ -182,3 +182,32 @@ div.boutons {
 .bouton:hover {
 	background-color: #ffffff;
 }
+
+.menu {
+	width: 100%;
+	background-color: #404040;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.menu-item {
+	cursor: pointer;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	color: #d5d5d5;
+}
+
+.menu-item:hover {
+	color: #404040;
+	background-color: #d5d5d5;
+}
+
+.menu-aPropos {
+	float: right;
+	right: 0;
+	margin-top: -0.5em;
+}

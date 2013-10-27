@@ -19,8 +19,8 @@ security:
             security: false
 
         login:
-            pattern:  ^/(login|logoutConfirm)$
-            security: false
+            pattern:    ^/(login|logoutConfirm)$
+            anonymous:  ~
 
         secured_area:
             pattern:    ^/

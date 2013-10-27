@@ -73,4 +73,9 @@ patlenain_gas:
       title:  Modifier un utilisateur
     show:
       title:  Détail d'un utilisateur
+  menu:
+    adherent:     Adhérents
+    annee:        Années
+    utilisateur:  Utilisateurs
+    aPropos:      A propos
 Bad credentials: L'identifiant et le mot de passe ne correspondent pas
