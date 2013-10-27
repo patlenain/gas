@@ -11,11 +11,10 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="patlenain_gas_index")
-     * @Template()
      * @Secure(roles="ROLE_USER")
      */
     public function indexAction()
     {
-        return array();
+    	return $this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
     }
 }
