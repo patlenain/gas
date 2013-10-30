@@ -89,7 +89,7 @@ a:visited {
 	color: #0000aa;
 }
 
-div.list table {
+div.liste table {
 	min-width: 200px;
 	border-collapse: collapse;
 	border: 1px solid black;
@@ -97,7 +97,7 @@ div.list table {
 	margin: 0.2em;
 }
 
-div.list th, div.list td {
+div.liste th, div.liste td {
 	padding-left: 0.4em;
 	padding-right: 0.4em;
 	padding-top: 0.2em;
@@ -105,20 +105,20 @@ div.list th, div.list td {
 	border: 1px solid #808080;
 }
 
-div.list thead {
+div.liste thead {
 	font-style: italic;
 	background-color: #d5d5d5;
 }
 
-div.list tr.odd {
+div.liste tr.odd {
 	background-color: #eeeeee;
 }
 
-div.list tr.even {
+div.liste tr.even {
 	background-color: #eeeeee;
 }
 
-div.list tr.odd:hover, div.list tr.even:hover {
+div.liste tr.odd:hover, div.liste tr.even:hover {
 	background-color: #FFFFFF;
 	color: #000000;
 	cursor: pointer;
