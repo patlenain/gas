@@ -14,6 +14,9 @@ patlenain_gas:
     dateAdhesion:   Date d'adhésion
     annee:    Année
     confirmDelete:  Voulez-vous vraiment supprimer cet adhérent ?
+    readherer:  Réadhérer
+    readhesion:
+      title:  Réadhésion
     list:
       title:  Liste des adhérents
     add:
@@ -43,12 +46,14 @@ patlenain_gas:
       non:    Non
       save:   Enregistrer
   login:
+      action:     Connexion
       login:      Connexion
       username:   Identifiant
       password:   Mot de passe
       rememberMe: Connexion automatique
       title:      Connexion
   logout:
+      action: Déconnexion
       logout: Vous êtes maintenant déconnectés
       title:  Déconnexion
   preferences:

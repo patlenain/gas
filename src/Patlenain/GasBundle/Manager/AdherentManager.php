@@ -3,6 +3,7 @@
 namespace Patlenain\GasBundle\Manager;
 
 use Doctrine\ORM\EntityManager;
+use Patlenain\GasBundle\Entity\Adherent;
 
 class AdherentManager {
 	/**
@@ -55,6 +56,26 @@ class AdherentManager {
 	{
 		$this->em->remove($adherent);
 		$this->em->flush();
+	}
+
+	/**
+	 * @param Adherent $adherent
+	 * @return Adherent
+	 */
+	public function readhesion($adherent) {
+		$copie = new Adherent();
+		$copie->setNom($adherent->getNom());
+		$copie->setPrenom($adherent->getPrenom());
+		$copie->setAdresse($adherent->getAdresse());
+		$copie->setCodePostal($adherent->getCodePostal());
+		$copie->setVille($adherent->getVille());
+		$copie->setEmail($adherent->getEmail());
+		$copie->setDateNaissance($adherent->getDateNaissance());
+		$copie->setDateAdhesion($adherent->getDateAdhesion());
+		$copie->setAnnee($adherent->getAnnee());
+		$this->em->persist($copie);
+		$this->em->flush();
+		return $copie;
 	}
 
 	/**

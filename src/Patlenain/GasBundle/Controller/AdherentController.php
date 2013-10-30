@@ -10,6 +10,7 @@ use Patlenain\GasBundle\Form\AdherentType;
 use Patlenain\GasBundle\Manager\AdherentManager;
 use Symfony\Bridge\Monolog\Logger;
 use JMS\SecurityExtraBundle\Annotation\Secure;
+use Patlenain\GasBundle\Manager\AnneeManager;
 
 /**
  * @Route("/adherent")
@@ -106,6 +107,42 @@ class AdherentController extends Controller
 				$this->get('session')->getFlashBag()->add('notice', 'Adhérent modifié');
 				return $this->redirect($this->generateUrl('patlenain_gas_adherent_show',
 						array( 'adherentId' => $adherentId)));
+			}
+		}
+		return array('form' => $form->createView(), 'adherent' => $adherent);
+	}
+
+    /**
+	 * @Route("/readhesion/{adherentId}", name="patlenain_gas_adherent_readhesion")
+	 * @Template()
+	 * @Secure(roles="ROLE_USER")
+	 */
+	public function readhesionAction($adherentId)
+	{
+		$request = $this->get('request');
+		if (!$adherent = $this->get('patlenain_gas.adherent_manager')->loadAdherent($adherentId))
+		{
+			throw $this->createNotFoundException('Adhérent inconnu');
+		}
+		// On détache l'entité pour ne pas la modifier
+		$this->getDoctrine()->getManager()->detach($adherent);
+		$derniereAnnee = $this->get('patlenain_gas.annee_manager')->getDerniereAnnee();
+		$adherent->setAnnee($derniereAnnee);
+		$adherent->setDateAdhesion(null);
+		$form = $this->createForm(new AdherentType(), $adherent, array(
+			'action' => $this->generateUrl('patlenain_gas_adherent_readhesion',
+				array('adherentId' => $adherent->getId())),
+			'method' => 'post'
+		));
+		if ($request->isMethod('post'))
+		{
+			$form->submit($request);
+			if ($form->isValid())
+			{
+				$adherent = $this->get('patlenain_gas.adherent_manager')->readhesion($adherent);
+				$this->get('session')->getFlashBag()->add('notice', 'Réadhésion enregistrée');
+				return $this->redirect($this->generateUrl('patlenain_gas_adherent_show',
+						array( 'adherentId' => $adherent->getId())));
 			}
 		}
 		return array('form' => $form->createView(), 'adherent' => $adherent);

@@ -20,4 +20,13 @@ class AnneeRepository extends EntityRepository
 		return $this->createQueryBuilder('annee')
 			->addOrderBy('annee.libelle', 'DESC');
 	}
+	/**
+	 * @return QueryBuilder
+	 */
+	function getDerniereAnnee()
+	{
+		return $this->createQueryBuilder('annee')
+			->addOrderBy('annee.libelle', 'DESC')
+			->setMaxResults(1);
+	}
 }

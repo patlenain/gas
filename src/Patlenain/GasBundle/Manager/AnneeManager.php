@@ -3,6 +3,7 @@
 namespace Patlenain\GasBundle\Manager;
 
 use Doctrine\ORM\EntityManager;
+use Patlenain\GasBundle\Entity\Annee;
 
 class AnneeManager {
 	/**
@@ -27,6 +28,17 @@ class AnneeManager {
 			->listAll()
 			->getQuery()
 			->getResult();
+	}
+
+	/**
+	 * @return Annee
+	 */
+	public function getDerniereAnnee()
+	{
+		return $this->getRepository()
+			->getDerniereAnnee()
+			->getQuery()
+			->getScalarResult();
 	}
 
 	/**

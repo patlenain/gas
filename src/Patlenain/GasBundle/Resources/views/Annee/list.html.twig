@@ -3,7 +3,11 @@
 {% block title %}{% trans %}patlenain_gas.annee.list.title{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="list">
+<div class="boutons">
+	<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_annee_add')}}';"
+		value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+</div>
+<div class="liste">
 	<table>
 		<thead>
 			<tr>
@@ -20,9 +24,5 @@
 		{% endfor %}
 		</tbody>
 	</table>
-	<div class="boutons">
-			<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_annee_add')}}';"
-				value="{% trans %}patlenain_gas.common.add{% endtrans %}">
-	</div>
 </div>
 {% endblock body %}

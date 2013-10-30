@@ -3,15 +3,22 @@
 {% block title %}{% trans %}patlenain_gas.adherent.list.title{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="list">
+<div class="criteres">
+</div>
+<div class="boutons">
+		<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_add')}}';"
+			value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+</div>
+<div class="liste">
 	<table>
 		<thead>
 			<tr>
-				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.nom{% endtrans %}</th>
-				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.prenom{% endtrans %}</th>
-				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.email{% endtrans %}</th>
-				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.codePostal{% endtrans %}</th>
-				<th style="width: 20%;">{% trans %}patlenain_gas.adherent.ville{% endtrans %}</th>
+				<th style="width: 7em;">{% trans %}patlenain_gas.adherent.nom{% endtrans %}</th>
+				<th style="width: 7em;">{% trans %}patlenain_gas.adherent.prenom{% endtrans %}</th>
+				<th style="width: 10em;">{% trans %}patlenain_gas.adherent.email{% endtrans %}</th>
+				<th style="width: 7em;">{% trans %}patlenain_gas.adherent.codePostal{% endtrans %}</th>
+				<th style="width: 7em;">{% trans %}patlenain_gas.adherent.ville{% endtrans %}</th>
+				<th style="width: 7em;">{% trans %}patlenain_gas.adherent.annee{% endtrans %}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,13 +30,10 @@
 			<td>{{ adherent.email }}</td>
 			<td>{{ adherent.codePostal }}</td>
 			<td>{{ adherent.ville }}</td>
+			<td>{{ adherent.annee.libelle }}</td>
 		</tr>
 		{% endfor %}
 		</tbody>
 	</table>
-	<div class="boutons">
-			<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_add')}}';"
-				value="{% trans %}patlenain_gas.common.add{% endtrans %}">
-	</div>
 </div>
 {% endblock body %}

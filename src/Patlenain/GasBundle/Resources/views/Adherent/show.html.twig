@@ -48,6 +48,8 @@ function confirmDelete() {
 	<span>{{ adherent.annee.libelle }}</span>
 </div>
 <div class="boutons">
+	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_adherent_readhesion', { adherentId: adherent.id }) }}'"
+		value="{% trans %}patlenain_gas.adherent.readherer{% endtrans %}" />
 	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_adherent_edit', { adherentId: adherent.id }) }}'"
 		value="{% trans %}patlenain_gas.common.edit{% endtrans %}" />
 	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_adherent_list') }}'"
