@@ -12,6 +12,8 @@ use Symfony\Bridge\Monolog\Logger;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Patlenain\GasBundle\Manager\AnneeManager;
 use Patlenain\GasBundle\Form\AdherentRechercheType;
+use Patlenain\GasBundle\Form\AdherentExportType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @Route("/adherent")
@@ -184,6 +186,30 @@ class AdherentController extends Controller
 			}
 		}
         return $this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
+	}
+
+	/**
+	 * @Route("/export", name="patlenain_gas_adherent_export")
+	 * @Template()
+	 * @Secure(roles="ROLE_USER")
+	 */
+	public function exportAction() {
+		$request = $this->getRequest();
+    	$derniereAnnee = $this->get('patlenain_gas.annee_manager')->getDerniereAnnee();
+    	$form = $this->createForm(new AdherentExportType($derniereAnnee), array(
+    		'action' => $this->generateUrl('patlenain_gas_adherent_export'),
+    		'method' => 'post'
+    	));
+		$form->submit($request, false);
+    	if ($form->isValid()) {
+    		$data = $form->getData();
+    		$export = $this->get('patlenain_gas.adherent_manager')->exportAdherents($data['annee']);
+    		return new Response($export, 200, array(
+    			'Content-Type' => 'text/csv',
+    			'Content-Disposition' => 'attachment; filename="export_adherents.csv"'
+    		));
+    	}
+		return array('form' => $form->createView());
 	}
 
 	/**

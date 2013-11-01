@@ -25,6 +25,8 @@ patlenain_gas:
       title:  Modifier un adhérent
     show:
       title:  Détail d'un adhérent
+    export:
+      title:  Export des adhérents
   annee:
     libelle:  Libellé
     confirmDelete:  Voulez-vous vraiment supprimer cette année ?
@@ -42,6 +44,7 @@ patlenain_gas:
       cancel:     Annuler
       delete:     Supprimer
       edit:       Modifier
+      export:     Exporter
       oui:        Oui
       non:        Non
       rechercher: Rechercher

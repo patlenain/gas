@@ -13,6 +13,7 @@
     <services>
         <service id="patlenain_gas.adherent_manager" class="%patlenain_gas.adherent_manager.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="translator" />
         </service>
         <service id="patlenain_gas.annee_manager" class="%patlenain_gas.annee_manager.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />

@@ -1,0 +1,16 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.adherent.export.title{% endtrans %}{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	{{ form_row(form.annee) }}
+	<div class="boutons">
+		{{ form_widget(form.export) }}
+		{{ form_widget(form.reset) }}
+	</div>
+	{{ form_rest(form) }}
+{{ form_end(form) }}
+{% endblock body %}

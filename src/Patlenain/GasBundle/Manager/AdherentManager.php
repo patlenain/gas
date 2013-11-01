@@ -4,6 +4,7 @@ namespace Patlenain\GasBundle\Manager;
 
 use Doctrine\ORM\EntityManager;
 use Patlenain\GasBundle\Entity\Adherent;
+use Symfony\Component\Translation\Translator;
 
 class AdherentManager {
 	/**
@@ -12,11 +13,18 @@ class AdherentManager {
 	protected $em;
 
 	/**
-	 * @param EntityManager $em
+	 * @var Translator
 	 */
-	public function __construct($em)
+	protected $translator;
+
+	/**
+	 * @param EntityManager $em
+	 * @param Translator $translator
+	 */
+	public function __construct($em, $translator)
 	{
 		$this->em = $em;
+		$this->translator = $translator;
 	}
 
 	/**
@@ -79,6 +87,54 @@ class AdherentManager {
 		$this->em->persist($copie);
 		$this->em->flush();
 		return $copie;
+	}
+
+	/**
+	 * @param Annee $annee
+	 * @return string
+	 */
+	public function exportAdherents($annee) {
+		$adherents = $this->listAdherents(null, null, $annee);
+		$handle = fopen('php://temp', 'r+');
+
+		// Entêtes
+		$header = array(
+			$this->translator->trans('patlenain_gas.adherent.nom'),
+			$this->translator->trans('patlenain_gas.adherent.prenom'),
+			$this->translator->trans('patlenain_gas.adherent.email'),
+			$this->translator->trans('patlenain_gas.adherent.codePostal'),
+			$this->translator->trans('patlenain_gas.adherent.ville'),
+			$this->translator->trans('patlenain_gas.adherent.dateNaissance'),
+			$this->translator->trans('patlenain_gas.adherent.dateAdhesion'),
+			$this->translator->trans('patlenain_gas.adherent.annee')
+		);
+		fputcsv($handle, $header);
+
+		// Lignes
+		foreach ($adherents as $adherent) {
+			$strDateAdhesion = '';
+			if ($adherent->getDateAdhesion() != null) {
+				$strDateAdhesion = $adherent->getDateAdhesion()->format('d/m/Y');
+			}
+			$line = array(
+				$adherent->getNom(),
+				$adherent->getPrenom(),
+				$adherent->getEmail(),
+				$adherent->getCodePostal(),
+				$adherent->getVille(),
+				$adherent->getDateNaissance()->format('d/m/Y'),
+				$strDateAdhesion,
+				$adherent->getAnnee()->getLibelle()
+			);
+			fputcsv($handle, $line);
+		}
+
+		// Fermeture et obtention des données
+		rewind($handle);
+		$content = stream_get_contents($handle);
+		fclose($handle);
+
+		return $content;
 	}
 
 	/**
