@@ -20,12 +20,15 @@ class AdherentManager {
 	}
 
 	/**
+	 * @param string $nom
+	 * @param string $prenom
+	 * @param Annee $annee
 	 * @return array
 	 */
-	public function listAdherents()
+	public function listAdherents($nom = null, $prenom = null, $annee = null)
 	{
 		return $this->getRepository()
-			->listAll()
+			->listAll($nom, $prenom, $annee)
 			->getQuery()
 			->getResult();
 	}

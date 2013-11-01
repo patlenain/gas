@@ -11,6 +11,7 @@ use Patlenain\GasBundle\Manager\AdherentManager;
 use Symfony\Bridge\Monolog\Logger;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Patlenain\GasBundle\Manager\AnneeManager;
+use Patlenain\GasBundle\Form\AdherentRechercheType;
 
 /**
  * @Route("/adherent")
@@ -33,8 +34,20 @@ class AdherentController extends Controller
      */
     public function listAction()
     {
-		$adherents = $this->get('patlenain_gas.adherent_manager')->listAdherents();
-		return array('adherents' => $adherents);
+    	$request = $this->getRequest();
+    	$derniereAnnee = $this->get('patlenain_gas.annee_manager')->getDerniereAnnee();
+    	$form = $this->createForm(new AdherentRechercheType($derniereAnnee), array(
+    		'action' => $this->generateUrl('patlenain_gas_adherent_list'),
+    		'method' => 'post'
+    	));
+		$form->submit($request, false);
+		$adherents = array();
+    	if ($form->isValid()) {
+    		$data = $form->getData();
+    		$adherents = $this->get('patlenain_gas.adherent_manager')->listAdherents(
+    			$data['nom'], $data['prenom'], $data['annee']);
+    	}
+		return array('form' => $form->createView(), 'adherents' => $adherents);
     }
 
     /**
@@ -43,7 +56,7 @@ class AdherentController extends Controller
 	 * @Secure(roles="ROLE_USER")
      */
     public function showAction($adherentId) {
-		$request = $this->get('request');
+		$request = $this->getRequest();
 		if (!$adherent = $this->get('patlenain_gas.adherent_manager')->loadAdherent($adherentId))
 		{
 			throw $this->createNotFoundException('Adhérent inconnu');
@@ -60,7 +73,7 @@ class AdherentController extends Controller
 	 */
 	public function newAction()
 	{
-		$request = $this->get('request');
+		$request = $this->getRequest();
 		$adherent = new Adherent();
 		$form = $this->createForm(new AdherentType(), $adherent, array(
 			'action' => $this->generateUrl('patlenain_gas_adherent_add'),
@@ -88,7 +101,7 @@ class AdherentController extends Controller
 	 */
 	public function editAction($adherentId)
 	{
-		$request = $this->get('request');
+		$request = $this->getRequest();
 		if (!$adherent = $this->get('patlenain_gas.adherent_manager')->loadAdherent($adherentId))
 		{
 			throw $this->createNotFoundException('Adhérent inconnu');
@@ -119,7 +132,7 @@ class AdherentController extends Controller
 	 */
 	public function readhesionAction($adherentId)
 	{
-		$request = $this->get('request');
+		$request = $this->getRequest();
 		if (!$adherent = $this->get('patlenain_gas.adherent_manager')->loadAdherent($adherentId))
 		{
 			throw $this->createNotFoundException('Adhérent inconnu');
@@ -155,7 +168,7 @@ class AdherentController extends Controller
 	 */
 	public function deleteAction($adherentId)
 	{
-	    $request = $this->get('request');
+	    $request = $this->getRequest();
 		if ($request->isMethod('post'))
 		{
 			$form = $this->createDeleteForm($adherentId);

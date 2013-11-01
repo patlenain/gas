@@ -37,14 +37,15 @@ patlenain_gas:
     show:
       title:  Détail d'une année
   common:
-      add:    Ajouter
-      cancel: Annuler
-      back:   Retour
-      delete: Supprimer
-      edit:   Modifier
-      oui:    Oui
-      non:    Non
-      save:   Enregistrer
+      add:        Ajouter
+      back:       Retour
+      cancel:     Annuler
+      delete:     Supprimer
+      edit:       Modifier
+      oui:        Oui
+      non:        Non
+      rechercher: Rechercher
+      save:       Enregistrer
   login:
       action:     Connexion
       login:      Connexion

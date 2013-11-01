@@ -3,12 +3,20 @@
 {% block title %}{% trans %}patlenain_gas.adherent.list.title{% endtrans %}{% endblock %}
 
 {% block body %}
-<div class="criteres">
-</div>
-<div class="boutons">
+{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	{{ form_row(form.nom) }}
+	{{ form_row(form.prenom) }}
+	{{ form_row(form.annee) }}
+	<div class="boutons">
+		{{ form_widget(form.recherche) }}
+		{{ form_widget(form.reset) }}
 		<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_add')}}';"
 			value="{% trans %}patlenain_gas.common.add{% endtrans %}">
-</div>
+	</div>
+	{{ form_rest(form) }}
+{{ form_end(form) }}
 <div class="liste">
 	<table>
 		<thead>

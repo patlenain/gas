@@ -38,7 +38,7 @@ class AnneeManager {
 		return $this->getRepository()
 			->getDerniereAnnee()
 			->getQuery()
-			->getScalarResult();
+			->getOneOrNullResult();
 	}
 
 	/**
