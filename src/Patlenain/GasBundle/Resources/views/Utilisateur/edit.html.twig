@@ -10,7 +10,11 @@
 	{{ form_row(form.nom) }}
 	{{ form_row(form.email) }}
 	{{ form_row(form.password) }}
-	{{ form_row(form.admin) }}
+	{% if utilisateur.username == 'admin' %}
+		{{ form_row(form.admin, { 'disabled': true }) }}
+	{% else %}
+		{{ form_row(form.admin) }}
+	{% endif %}
 	<div class="boutons">
 		{{ form_widget(form.save) }}
 		{{ form_widget(form.reset) }}
