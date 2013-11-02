@@ -2,8 +2,10 @@
 
 namespace Patlenain\GasBundle\Manager;
 
+use DateTime;
 use Doctrine\ORM\EntityManager;
 use Patlenain\GasBundle\Entity\Adherent;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Translation\Translator;
 
 class AdherentManager {
@@ -102,6 +104,7 @@ class AdherentManager {
 			$this->translator->trans('patlenain_gas.adherent.nom'),
 			$this->translator->trans('patlenain_gas.adherent.prenom'),
 			$this->translator->trans('patlenain_gas.adherent.email'),
+			$this->translator->trans('patlenain_gas.adherent.adresse'),
 			$this->translator->trans('patlenain_gas.adherent.codePostal'),
 			$this->translator->trans('patlenain_gas.adherent.ville'),
 			$this->translator->trans('patlenain_gas.adherent.dateNaissance'),
@@ -113,13 +116,14 @@ class AdherentManager {
 		// Lignes
 		foreach ($adherents as $adherent) {
 			$strDateAdhesion = '';
-			if ($adherent->getDateAdhesion() != null) {
+			if ($adherent->getDateAdhesion()) {
 				$strDateAdhesion = $adherent->getDateAdhesion()->format('d/m/Y');
 			}
 			$line = array(
 				$adherent->getNom(),
 				$adherent->getPrenom(),
 				$adherent->getEmail(),
+				$adherent->getAdresse(),
 				$adherent->getCodePostal(),
 				$adherent->getVille(),
 				$adherent->getDateNaissance()->format('d/m/Y'),
@@ -135,6 +139,38 @@ class AdherentManager {
 		fclose($handle);
 
 		return $content;
+	}
+
+	/**
+	 * @param UploadedFile $fichier
+	 * @return number
+	 */
+	public function importAdherents($annee, $fichier) {
+		$nbLignes = 0;
+		$handle = fopen($fichier->getRealPath(), "r");
+		$headers = fgetcsv($handle);
+		while (($data = fgetcsv($handle))) {
+			$adherent = new Adherent();
+			$adherent->setNom($data[0]);
+			$adherent->setPrenom($data[1]);
+			$adherent->setEmail($data[2]);
+			$adherent->setAdresse($data[3]);
+			$adherent->setCodePostal($data[4]);
+			$adherent->setVille($data[5]);
+			$dateNaissance = DateTime::createFromFormat("d/m/Y", $data[6]);
+			$adherent->setDateNaissance($dateNaissance);
+			$dateAdhesion = null;
+			if ($data[7]) {
+				$dateAdhesion = DateTime::createFromFormat("d/m/Y", $data[7]);
+			}
+			$adherent->setDateNaissance($dateNaissance);
+			$adherent->setAnnee($annee);
+			$this->em->persist($adherent);
+			$nbLignes++;
+		}
+		fclose($handle);
+		$this->em->flush();
+		return $nbLignes;
 	}
 
 	/**

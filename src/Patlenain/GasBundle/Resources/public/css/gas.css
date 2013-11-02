@@ -159,6 +159,10 @@ div.field input.error {
 	border: 1px solid #ff0000;
 }
 
+div.field input.fileupload {
+	border: none;
+}
+
 div.field textarea {
 	font-family: inherit;
 	font-size: inherit;

@@ -14,6 +14,8 @@
 		{{ form_widget(form.reset) }}
 		<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_add')}}';"
 			value="{% trans %}patlenain_gas.common.add{% endtrans %}">
+		<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_import')}}';"
+			value="{% trans %}patlenain_gas.common.import{% endtrans %}">
 		<input type="button" class="bouton" onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_export')}}';"
 			value="{% trans %}patlenain_gas.common.export{% endtrans %}">
 	</div>

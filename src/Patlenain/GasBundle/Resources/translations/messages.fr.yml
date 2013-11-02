@@ -27,6 +27,9 @@ patlenain_gas:
       title:  Détail d'un adhérent
     export:
       title:  Export des adhérents
+    import:
+      formatAttendu:  Le format attendu du fichier est (avec une ligne d'entête) :
+      title:  Import des adhérents
   annee:
     libelle:  Libellé
     confirmDelete:  Voulez-vous vraiment supprimer cette année ?
@@ -42,9 +45,12 @@ patlenain_gas:
       add:        Ajouter
       back:       Retour
       cancel:     Annuler
+      csvDateFormat: format JJ/MM/AAAA
       delete:     Supprimer
       edit:       Modifier
       export:     Exporter
+      file:       Fichier
+      import:     Importer
       oui:        Oui
       non:        Non
       rechercher: Rechercher

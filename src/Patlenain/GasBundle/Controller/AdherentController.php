@@ -14,6 +14,7 @@ use Patlenain\GasBundle\Manager\AnneeManager;
 use Patlenain\GasBundle\Form\AdherentRechercheType;
 use Patlenain\GasBundle\Form\AdherentExportType;
 use Symfony\Component\HttpFoundation\Response;
+use Patlenain\GasBundle\Form\AdherentImportType;
 
 /**
  * @Route("/adherent")
@@ -208,6 +209,29 @@ class AdherentController extends Controller
     			'Content-Type' => 'text/csv',
     			'Content-Disposition' => 'attachment; filename="export_adherents.csv"'
     		));
+    	}
+		return array('form' => $form->createView());
+	}
+
+	/**
+	 * @Route("/import", name="patlenain_gas_adherent_import")
+	 * @Template()
+	 * @Secure(roles="ROLE_USER")
+	 */
+	public function importAction() {
+		$request = $this->getRequest();
+    	$derniereAnnee = $this->get('patlenain_gas.annee_manager')->getDerniereAnnee();
+    	$form = $this->createForm(new AdherentImportType($derniereAnnee), array(
+    		'action' => $this->generateUrl('patlenain_gas_adherent_import'),
+    		'method' => 'post'
+    	));
+		$form->submit($request, false);
+    	if ($form->isValid()) {
+    		$data = $form->getData();
+    		$nbAdherents = $this->get('patlenain_gas.adherent_manager')
+    			->importAdherents($derniereAnnee, $data['fichier']);
+    		$this->get('session')->getFlashBag()->add('notice', 'Adhérents importés : '.$nbAdherents);
+    		$this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
     	}
 		return array('form' => $form->createView());
 	}

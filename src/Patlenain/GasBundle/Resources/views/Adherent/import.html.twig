@@ -1,0 +1,32 @@
+{% extends 'PatlenainGasBundle::base.html.twig' %}
+
+{% block title %}{% trans %}patlenain_gas.adherent.import.title{% endtrans %}{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+	{{ form_errors(form) }}
+
+	{{ form_row(form.annee) }}
+	{{ form_row(form.fichier) }}
+	<div class="boutons">
+		{{ form_widget(form.import) }}
+		{{ form_widget(form.reset) }}
+	</div>
+	{{ form_rest(form) }}
+{{ form_end(form) }}
+<div>
+	{% trans %}patlenain_gas.adherent.import.formatAttendu{% endtrans %}
+	<ul>
+		<li>{% trans %}patlenain_gas.adherent.nom{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.prenom{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.email{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.adresse{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.codePostal{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.ville{% endtrans %}</li>
+		<li>{% trans %}patlenain_gas.adherent.dateNaissance{% endtrans %}
+			({% trans %}patlenain_gas.common.csvDateFormat{% endtrans %})</li>
+		<li>{% trans %}patlenain_gas.adherent.dateAdhesion{% endtrans %}
+			({% trans %}patlenain_gas.common.csvDateFormat{% endtrans %}</li>
+	</ul>
+</div>
+{% endblock body %}
