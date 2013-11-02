@@ -3,6 +3,7 @@
 {% block title %}{% trans %}patlenain_gas.utilisateur.show.title{% endtrans %}{% endblock %}
 
 {% block javascripts %}
+{% if utilisateur.username != 'admin' %}
 <script type="text/javascript">
 <!--
 function confirmDelete() {
@@ -12,6 +13,7 @@ function confirmDelete() {
 }
 //-->
 </script>
+{% endif %}
 {% endblock %}
 
 {% block body %}
@@ -36,8 +38,10 @@ function confirmDelete() {
 		value="{% trans %}patlenain_gas.common.edit{% endtrans %}" />
 	<input class="bouton" type="button" onclick="window.location.href='{{ path('patlenain_gas_utilisateur_list') }}'"
 		value="{% trans %}patlenain_gas.common.back{% endtrans %}" />
+	{% if utilisateur.username != 'admin' %}
 	<input class="bouton" type="button" onclick="confirmDelete();"
 		value="{% trans %}patlenain_gas.common.delete{% endtrans %}" />
+	{% endif %}
 </div>
 
 {{ form(delete_form, { 'attr': { 'id': 'deleteForm' }}) }}
