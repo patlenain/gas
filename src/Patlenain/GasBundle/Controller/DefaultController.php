@@ -16,4 +16,14 @@ class DefaultController extends Controller
     {
     	return $this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
     }
+
+    /**
+     * @Route("/apropos", name="patlenain_gas_apropos")
+     * @Secure(roles="ROLE_USER")
+     */
+    public function aproposAction()
+    {
+    	$locale = $this->getRequest()->getLocale();
+    	return $this->render('PatlenainGasBundle:Default:apropos.'.$locale.'.html.twig');
+    }
 }

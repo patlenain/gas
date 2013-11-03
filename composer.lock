@@ -1266,17 +1266,17 @@
         },
         {
             "name": "patlenain/gas-jquery",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "target-dir": "Patlenain/GasJQueryBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jquery.git",
-                "reference": "4f9f5054b442d772c292a57bac858482f3780a9f"
+                "reference": "6207c59acd226f98530bcd64a0109a7724dcdc80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/4f9f5054b442d772c292a57bac858482f3780a9f",
-                "reference": "4f9f5054b442d772c292a57bac858482f3780a9f",
+                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/6207c59acd226f98530bcd64a0109a7724dcdc80",
+                "reference": "6207c59acd226f98530bcd64a0109a7724dcdc80",
                 "shasum": ""
             },
             "require": {
@@ -1296,7 +1296,7 @@
             ],
             "authors": [
                 {
-                    "name": "patlenain",
+                    "name": "Patrice Le Gurun",
                     "email": "patrice@legurun.org",
                     "role": "Developer"
                 }
@@ -1307,21 +1307,21 @@
                 "gas",
                 "jquery"
             ],
-            "time": "2013-10-21 18:04:06"
+            "time": "2013-11-02 11:09:41"
         },
         {
             "name": "patlenain/gas-jqueryui",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "target-dir": "Patlenain/GasJQueryUIBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jqueryui.git",
-                "reference": "2849687c3a5b267273a0c694ee7b8b3b65698b11"
+                "reference": "8d32ad353226665b2bef338c2972f1474b1c569a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/2849687c3a5b267273a0c694ee7b8b3b65698b11",
-                "reference": "2849687c3a5b267273a0c694ee7b8b3b65698b11",
+                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/8d32ad353226665b2bef338c2972f1474b1c569a",
+                "reference": "8d32ad353226665b2bef338c2972f1474b1c569a",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
             ],
             "authors": [
                 {
-                    "name": "patlenain",
+                    "name": "Patrice Le Gurun",
                     "email": "patrice@legurun.org",
                     "role": "Developer"
                 }
@@ -1353,7 +1353,7 @@
                 "gas",
                 "jQueryUI"
             ],
-            "time": "2013-10-21 18:03:56"
+            "time": "2013-11-02 11:08:58"
         },
         {
             "name": "phpoption/phpoption",
