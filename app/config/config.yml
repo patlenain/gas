@@ -28,6 +28,8 @@ twig:
     form:
         resources:
             - 'PatlenainGasBundle:Form:form_template.html.twig'
+    globals:
+        association:  %association%
 
 # Assetic Configuration
 assetic:

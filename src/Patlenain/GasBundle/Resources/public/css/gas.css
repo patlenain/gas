@@ -18,13 +18,23 @@ div#body {
 	width: 900px;
 }
 
+div#header {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	clear: both;
+}
+
 div#logo {
 	float: left;
 	text-align: center;
 }
 
 div#userInfo {
+	text-align: right;
 	float: right;
+	position: relative;
+	top: -1.1em;
 }
 
 div#userInfo span {
@@ -33,13 +43,6 @@ div#userInfo span {
 
 div#userInfo span:hover {
 	color: #b0b0b0;
-}
-
-div#header {
-	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	clear: both;
 }
 
 div.error {

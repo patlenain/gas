@@ -38,25 +38,28 @@ $(document).ready(function() {
 	<div id="header">
 		<div id="logo">
 			<a href="{{ path('patlenain_gas_index') }}">
-				<img id="logo" src='{{ asset('bundles/patlenaingas/images/gas_logo.png') }}'
+				<img src='{{ asset('bundles/patlenaingas/images/gas_logo.png') }}'
 					alt="{% trans %}patlenain_gas.title{% endtrans %}"
 					title="{% trans %}patlenain_gas.title{% endtrans %}"/>
 			</a>
 		</div>
 		<div id="userInfo">
-		{% if app.user  %}
-			<span onclick="javascript:window.location='{{ path('patlenain_gas_preferences') }}';">
-				{{ app.user.nom }}
-			</span>
-			-
-			<span onclick="javascript:window.location='{{ path('patlenain_gas_logout') }}';">
-				{% trans %}patlenain_gas.logout.action{% endtrans %}
-			</span>
-		{% else %}
-			<span onclick="javascript:window.location='{{ path('patlenain_gas_login') }}';">
-				{% trans %}patlenain_gas.login.action{% endtrans %}
-			</span>
-		{% endif %}
+			<div>{{ association }}</div>
+			<div>
+			{% if app.user  %}
+				<span onclick="javascript:window.location='{{ path('patlenain_gas_preferences') }}';">
+					{{ app.user.nom }}
+				</span>
+				-
+				<span onclick="javascript:window.location='{{ path('patlenain_gas_logout') }}';">
+					{% trans %}patlenain_gas.logout.action{% endtrans %}
+				</span>
+			{% else %}
+				<span onclick="javascript:window.location='{{ path('patlenain_gas_login') }}';">
+					{% trans %}patlenain_gas.login.action{% endtrans %}
+				</span>
+			{% endif %}
+			</div>
 		</div>
 	</div>
 	<div>
