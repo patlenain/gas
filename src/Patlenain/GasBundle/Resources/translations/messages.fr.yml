@@ -28,7 +28,7 @@ patlenain_gas:
     export:
       title:  Export des adhérents
     import:
-      formatAttendu:  Le format attendu du fichier est (avec une ligne d'entête) :
+      formatAttendu:  "Le format attendu du fichier est (avec une ligne d'entête) :"
       title:  Import des adhérents
   annee:
     libelle:  Libellé
