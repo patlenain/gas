@@ -10,6 +10,8 @@ patlenain_gas:
     codePostal: Code postal
     ville:    Ville
     email:    Email
+    numeroFixe:     Téléphone fixe
+    numeroPortable: Téléphone portable
     dateNaissance:  Date de naissance
     dateAdhesion:   Date d'adhésion
     annee:    Année

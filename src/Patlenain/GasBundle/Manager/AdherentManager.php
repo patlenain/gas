@@ -83,6 +83,8 @@ class AdherentManager {
 		$copie->setCodePostal($adherent->getCodePostal());
 		$copie->setVille($adherent->getVille());
 		$copie->setEmail($adherent->getEmail());
+		$copie->setNumeroFixe($adherent->getNumeroFixe());
+		$copie->setNumeroPortable($adherent->getNumeroPortable());
 		$copie->setDateNaissance($adherent->getDateNaissance());
 		$copie->setDateAdhesion($adherent->getDateAdhesion());
 		$copie->setAnnee($adherent->getAnnee());
@@ -107,6 +109,8 @@ class AdherentManager {
 			$this->translator->trans('patlenain_gas.adherent.adresse'),
 			$this->translator->trans('patlenain_gas.adherent.codePostal'),
 			$this->translator->trans('patlenain_gas.adherent.ville'),
+			$this->translator->trans('patlenain_gas.adherent.numeroFixe'),
+			$this->translator->trans('patlenain_gas.adherent.numeroPortable'),
 			$this->translator->trans('patlenain_gas.adherent.dateNaissance'),
 			$this->translator->trans('patlenain_gas.adherent.dateAdhesion'),
 			$this->translator->trans('patlenain_gas.adherent.annee')
@@ -126,6 +130,8 @@ class AdherentManager {
 				$adherent->getAdresse(),
 				$adherent->getCodePostal(),
 				$adherent->getVille(),
+				$adherent->getNumeroFixe(),
+				$adherent->getNumeroPortable(),
 				$adherent->getDateNaissance()->format('d/m/Y'),
 				$strDateAdhesion,
 				$adherent->getAnnee()->getLibelle()
@@ -157,11 +163,13 @@ class AdherentManager {
 			$adherent->setAdresse($data[3]);
 			$adherent->setCodePostal($data[4]);
 			$adherent->setVille($data[5]);
-			$dateNaissance = DateTime::createFromFormat("d/m/Y", $data[6]);
+			$adherent->setNumeroFixe($data[6]);
+			$adherent->setNumeroPortable($data[7]);
+			$dateNaissance = DateTime::createFromFormat("d/m/Y", $data[8]);
 			$adherent->setDateNaissance($dateNaissance);
 			$dateAdhesion = null;
-			if ($data[7]) {
-				$dateAdhesion = DateTime::createFromFormat("d/m/Y", $data[7]);
+			if ($data[9]) {
+				$dateAdhesion = DateTime::createFromFormat("d/m/Y", $data[9]);
 			}
 			$adherent->setDateNaissance($dateNaissance);
 			$adherent->setAnnee($annee);

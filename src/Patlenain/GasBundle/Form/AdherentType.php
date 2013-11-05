@@ -35,6 +35,14 @@ class AdherentType extends AbstractType
             		'label' => 'patlenain_gas.adherent.email',
             		'required' => false,
             		'max_length' => 50))
+			->add('numeroFixe', 'text', array(
+            		'label' => 'patlenain_gas.adherent.numeroFixe',
+            		'required' => false,
+            		'max_length' => 15))
+			->add('numeroPortable', 'text', array(
+            		'label' => 'patlenain_gas.adherent.numeroPortable',
+            		'required' => false,
+            		'max_length' => 15))
             ->add('dateNaissance', 'date', array(
             		'widget' => 'single_text',
             		'format' => 'dd/MM/yyyy',

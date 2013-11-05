@@ -79,7 +79,7 @@ class Adherent
     /**
      * @var \Date
      *
-     * @ORM\Column(name="dateNaissance", type="date")
+     * @ORM\Column(name="date_naissance", type="date")
      * @Constraints\NotNull()
      * @Constraints\Date()
      */
@@ -88,10 +88,26 @@ class Adherent
     /**
      * @var \Date
      *
-     * @ORM\Column(name="dateAdhesion", type="date", nullable=true)
+     * @ORM\Column(name="date_adhesion", type="date", nullable=true)
      * @Constraints\Date()
      */
     private $dateAdhesion;
+
+    /**
+     * @var \Date
+     *
+     * @Orm\Column(name="numero_fixe", type="string", length=15, nullable=true)
+     * @Constraints\Length(max="15")
+     */
+    private $numeroFixe;
+
+    /**
+     * @var \Date
+     *
+     * @Orm\Column(name="numero_portable", type="string", length=15, nullable=true)
+     * @Constraints\Length(max="15")
+     */
+    private $numeroPortable;
 
     /**
      * @var Annee
@@ -294,6 +310,52 @@ class Adherent
     public function getDateAdhesion()
     {
         return $this->dateAdhesion;
+    }
+
+    /**
+     * Set numeroFixe
+     *
+     * @param string $numeroFixe
+     * @return Adherent
+     */
+    public function setNumeroFixe($numeroFixe)
+    {
+        $this->numeroFixe = $numeroFixe;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroFixe
+     *
+     * @return string
+     */
+    public function getNumeroFixe()
+    {
+        return $this->numeroFixe;
+    }
+
+    /**
+     * Set numeroPortable
+     *
+     * @param string $numeroPortable
+     * @return Adherent
+     */
+    public function setNumeroPortable($numeroPortable)
+    {
+        $this->numeroPortable = $numeroPortable;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroPortable
+     *
+     * @return string
+     */
+    public function getNumeroPortable()
+    {
+        return $this->numeroPortable;
     }
 
     /**

@@ -36,6 +36,14 @@ function confirmDelete() {
 	<span><a href="mailto:{{adherent.email}}">{{ adherent.email }}</a></span>
 </div>
 <div class="field">
+	<label>{{ 'patlenain_gas.adherent.numeroFixe'|trans }}</label>
+	<span>{{ adherent.numeroFixe }}</span>
+</div>
+<div class="field">
+	<label>{{ 'patlenain_gas.adherent.numeroPortable'|trans }}</label>
+	<span>{{ adherent.numeroPortable }}</span>
+</div>
+<div class="field">
 	<label>{{ 'patlenain_gas.adherent.dateNaissance'|trans }}</label>
 	<span>{{ adherent.dateNaissance | date('d/m/Y') }}</span>
 </div>
