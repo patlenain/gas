@@ -1,0 +1,1 @@
+ALTER TABLE adherent ADD numero_fixe VARCHAR(15) DEFAULT NULL, ADD numero_portable VARCHAR(15) DEFAULT NULL, CHANGE datenaissance date_naissance DATE NOT NULL, CHANGE dateadhesion date_adhesion DATE DEFAULT NULL;
