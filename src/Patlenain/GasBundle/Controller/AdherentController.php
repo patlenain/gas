@@ -206,7 +206,8 @@ class AdherentController extends Controller
     		$data = $form->getData();
     		$export = $this->get('patlenain_gas.adherent_manager')->exportAdherents($data['annee']);
     		return new Response($export, 200, array(
-    			'Content-Type' => 'text/csv',
+    			'Content-Type' => 'text/csv; charset=utf-8',
+    			'Cache-Control' => 'no-store, no-cache',
     			'Content-Disposition' => 'attachment; filename="export_adherents.csv"'
     		));
     	}
