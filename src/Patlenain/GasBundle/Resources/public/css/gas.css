@@ -192,6 +192,8 @@ div.boutons {
 
 .bouton {
 	background-color: #dddddd;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
 	border: 1px solid grey;
 	border-radius: 0.3em;
 	-moz-border-radius: 0.3em;
@@ -210,7 +212,6 @@ div.boutons {
 	padding-bottom: 0.5em;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	height: 1.3em;
 }
 
 .menu-item {
