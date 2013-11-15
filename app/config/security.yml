@@ -22,6 +22,10 @@ security:
             pattern:    ^/(login|logoutConfirm)$
             anonymous:  ~
 
+        apropos:
+            pattern:    ^/(apropos)$
+            anonymous:  ~
+
         secured_area:
             pattern:    ^/
             form_login:

@@ -19,7 +19,6 @@ class DefaultController extends Controller
 
     /**
      * @Route("/apropos", name="patlenain_gas_apropos")
-     * @Secure(roles="ROLE_USER")
      */
     public function aproposAction()
     {
