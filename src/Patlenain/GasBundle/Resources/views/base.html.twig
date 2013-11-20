@@ -65,25 +65,26 @@ $(document).ready(function() {
 	<div>
 		<div id="content">
 			<div class="menu">
-				{% if is_granted('ROLE_USER') %}
-				<span class="menu-item" onclick="javascript:window.location='{{ path('patlenain_gas_adherent_list') }}';">
-					{% trans %}patlenain_gas.menu.adherent{% endtrans %}
-				</span>
-				{% endif %}
-				{% if is_granted('ROLE_ADMIN') %}
-				<span class="menu-item" onclick="javascript:window.location='{{ path('patlenain_gas_annee_list') }}';">
-					{% trans %}patlenain_gas.menu.annee{% endtrans %}
-				</span>
-				{% endif %}
-				{% if is_granted('ROLE_ADMIN') %}
-				<span class="menu-item" onclick="javascript:window.location='{{ path('patlenain_gas_utilisateur_list') }}';">
-					{% trans %}patlenain_gas.menu.utilisateur{% endtrans %}
-				</span>
-				{% endif %}
-				<span style="width: 100%;">&nbsp;</span>
-				<span class="menu-item menu-aPropos" onclick="javascript:window.location='{{ path('patlenain_gas_apropos') }}';">
-					{% trans %}patlenain_gas.menu.aPropos{% endtrans %}
-				</span>
+				<ul>
+					{% if is_granted('ROLE_USER') %}
+					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_adherent_list') }}';">
+						{% trans %}patlenain_gas.menu.adherent{% endtrans %}
+					</a></li>
+					{% endif %}
+					{% if is_granted('ROLE_ADMIN') %}
+					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_annee_list') }}';">
+						{% trans %}patlenain_gas.menu.annee{% endtrans %}
+					</a></li>
+					{% endif %}
+					{% if is_granted('ROLE_ADMIN') %}
+					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_utilisateur_list') }}';">
+						{% trans %}patlenain_gas.menu.utilisateur{% endtrans %}
+					</a></li>
+					{% endif %}
+					<li class="menu-droite"><a onclick="javascript:window.location='{{ path('patlenain_gas_apropos') }}';">
+						{% trans %}patlenain_gas.menu.aPropos{% endtrans %}
+					</a></li>
+				</ul>
 			</div>
 			<div class="title">
 				{{ block('icon') }}
