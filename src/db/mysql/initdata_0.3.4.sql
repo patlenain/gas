@@ -1,0 +1,1 @@
+INSERT INTO utilisateur (username, nom, email, salt, password, admin) VALUES ('admin','Administrateur','root@localhost','3084bb887b6a407fc830647b29025d99','29f6040d06ca100b6d06010b79547ab603694f6acd0e5be90b5e9fde4ce8d6e8d162c32f8e7f93c89541bebb6f0d9e7a6b4869101a5f71c08a7fd86024c79f6a',1);
