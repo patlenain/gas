@@ -47,17 +47,11 @@ $(document).ready(function() {
 			<div>{{ association }}</div>
 			<div>
 			{% if app.user  %}
-				<span onclick="javascript:window.location='{{ path('patlenain_gas_preferences') }}';">
-					{{ app.user.nom }}
-				</span>
+				<a href="{{ path('patlenain_gas_preferences') }}">{{ app.user.nom }}</a>
 				-
-				<span onclick="javascript:window.location='{{ path('patlenain_gas_logout') }}';">
-					{% trans %}patlenain_gas.logout.action{% endtrans %}
-				</span>
+				<a href="{{ path('patlenain_gas_logout') }}">{% trans %}patlenain_gas.logout.action{% endtrans %}</a>
 			{% else %}
-				<span onclick="javascript:window.location='{{ path('patlenain_gas_login') }}';">
-					{% trans %}patlenain_gas.login.action{% endtrans %}
-				</span>
+				<a href="{{ path('patlenain_gas_login') }}">{% trans %}patlenain_gas.login.action{% endtrans %}</a>
 			{% endif %}
 			</div>
 		</div>
@@ -67,21 +61,21 @@ $(document).ready(function() {
 			<div class="menu">
 				<ul>
 					{% if is_granted('ROLE_USER') %}
-					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_adherent_list') }}';">
+					<li><a href="{{ path('patlenain_gas_adherent_list') }}">
 						{% trans %}patlenain_gas.menu.adherent{% endtrans %}
 					</a></li>
 					{% endif %}
 					{% if is_granted('ROLE_ADMIN') %}
-					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_annee_list') }}';">
+					<li><a href="{{ path('patlenain_gas_annee_list') }}">
 						{% trans %}patlenain_gas.menu.annee{% endtrans %}
 					</a></li>
 					{% endif %}
 					{% if is_granted('ROLE_ADMIN') %}
-					<li><a onclick="javascript:window.location='{{ path('patlenain_gas_utilisateur_list') }}';">
+					<li><a href="{{ path('patlenain_gas_utilisateur_list') }}">
 						{% trans %}patlenain_gas.menu.utilisateur{% endtrans %}
 					</a></li>
 					{% endif %}
-					<li class="menu-droite"><a onclick="javascript:window.location='{{ path('patlenain_gas_apropos') }}';">
+					<li class="menu-droite"><a href="{{ path('patlenain_gas_apropos') }}">
 						{% trans %}patlenain_gas.menu.aPropos{% endtrans %}
 					</a></li>
 				</ul>

@@ -5,6 +5,7 @@ body {
 	padding: 0;
 	font-family: "Verdana", "Arial", sans-serif;
 	background-color: #eeeeee;
+	color: #404040;
 }
 
 img {
@@ -76,20 +77,20 @@ div.title {
 }
 
 a:link {
-	text-decoration: underline;
-	color: #0000aa;
+	text-decoration: none;
+	color: #404040;
 }
 a:hover {
-	text-decoration: underline;
-	color: #0000aa;
+	text-decoration: none;
+	color: #404040;
 }
 a:active {
-	text-decoration: underline;
-	color: #0000aa;
+	text-decoration: none;
+	color: #404040;
 }
 a:visited {
-	text-decoration: underline;
-	color: #0000aa;
+	text-decoration: none;
+	color: #404040;
 }
 
 div.liste table {
@@ -238,14 +239,33 @@ div.boutons {
 .menu ul li a {
 	display: block;
 	float: left;
-	text-decoration: none;
+	color: #d5d5d5;
 }
 
-.menu ul li a:hover {
+.menu ul li:hover a {
 	color: #404040;
-	text-decoration: none;
 }
 
 .menu ul li.menu-droite {
 	float: right;
+}
+
+.email a:link {
+	text-decoration: underline;
+	color: #000088;
+}
+
+.email a:hover {
+	text-decoration: underline;
+	color: #000088;
+}
+
+.email a:active {
+	text-decoration: underline;
+	color: #000088;
+}
+
+.email a:visited {
+	text-decoration: underline;
+	color: #000088;
 }

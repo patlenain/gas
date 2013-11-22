@@ -17,8 +17,10 @@
 		<tbody>
 		{% for annee in annees %}
 		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
-			<td onclick="javascript:window.location.href = '{{ path('patlenain_gas_annee_show', {'anneeId': annee.id}) }}';">
-				{{ annee.libelle }}
+			<td>
+				<a href="{{ path('patlenain_gas_annee_show', {'anneeId': annee.id}) }}">
+					{{ annee.libelle }}
+				</a>
 			</td>
 		</tr>
 		{% endfor %}

@@ -27,7 +27,7 @@ function confirmDelete() {
 </div>
 <div class="field">
 	<label>{{ 'patlenain_gas.utilisateur.email'|trans }}</label>
-	<span><a href="mailto:{{ utilisateur.email }}">{{ utilisateur.email }}</a></span>
+	<span class="email"><a href="mailto:{{ utilisateur.email }}">{{ utilisateur.email }}</a></span>
 </div>
 <div class="field">
 	<label>{{ 'patlenain_gas.utilisateur.admin'|trans }}</label>
@@ -44,6 +44,8 @@ function confirmDelete() {
 	{% endif %}
 </div>
 
+{% if utilisateur.username != 'admin' %}
 {{ form(delete_form, { 'attr': { 'id': 'deleteForm' }}) }}
+{% endif %}
 
 {% endblock %}

@@ -19,12 +19,21 @@
 		</thead>
 		<tbody>
 		{% for utilisateur in utilisateurs %}
-		<tr class="{{ cycle(['odd', 'even'], loop.index) }}"
-			onclick="javascript:window.location.href = '{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}';">
-			<td>{{ utilisateur.username }}</td>
-			<td>{{ utilisateur.nom }}</td>
-			<td>{{ utilisateur.email }}</td>
-			<td>{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.non')|trans }}</td>
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+			<td>
+				<a href="{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}">{{ utilisateur.username }}</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}">{{ utilisateur.nom }}</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}">{{ utilisateur.email }}</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_utilisateur_show', {'utilisateurId': utilisateur.id}) }}">
+					{{ (utilisateur.admin ? 'patlenain_gas.common.oui':'patlenain_gas.common.non')|trans }}
+				</a>
+			</td>
 		</tr>
 		{% endfor %}
 		</tbody>

@@ -35,14 +35,37 @@
 		</thead>
 		<tbody>
 		{% for adherent in adherents %}
-		<tr class="{{ cycle(['odd', 'even'], loop.index) }}"
-			onclick="javascript:window.location.href = '{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}';">
-			<td>{{ adherent.nom }}</td>
-			<td>{{ adherent.prenom }}</td>
-			<td>{{ adherent.email }}</td>
-			<td>{{ adherent.codePostal }}</td>
-			<td>{{ adherent.ville }}</td>
-			<td>{{ adherent.annee.libelle }}</td>
+		<tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.nom }}
+				</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.prenom }}
+				</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.email }}
+				</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.codePostal }}
+				</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.ville }}
+				</a>
+			</td>
+			<td>
+				<a href="{{ path('patlenain_gas_adherent_show', {'adherentId': adherent.id}) }}">
+					{{ adherent.annee.libelle }}
+				</a>
+			</td>
 		</tr>
 		{% endfor %}
 		</tbody>
