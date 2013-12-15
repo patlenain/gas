@@ -13,22 +13,22 @@
 		"GPL-3.0+"
 	],
 	"require" : {
-		"symfony/symfony" : "2.3.*",
-		"doctrine/doctrine-fixtures-bundle" : ">=2.2.0",
-		"patlenain/gas-jqueryui" : ">=1.0",
-		"symfony/swiftmailer-bundle" : "2.3.*",
-		"patlenain/gas-jquery" : ">=1.0",
-		"doctrine/orm" : ">=2.2.3,<2.4-dev",
-		"jms/security-extra-bundle" : ">=1.5.1",
-		"symfony/assetic-bundle" : "2.3.*",
+		"symfony/symfony" : "~2.4",
+		"doctrine/doctrine-fixtures-bundle" : "~2.2",
+		"patlenain/gas-jqueryui" : "~1",
+		"symfony/swiftmailer-bundle" : "~2.3",
+		"patlenain/gas-jquery" : "~1",
+		"doctrine/orm" : "~2.2, >=2.2.3",
+		"jms/security-extra-bundle" : "~1.5",
+		"symfony/assetic-bundle" : "~2.3",
 		"incenteev/composer-parameter-handler" : "~2.0",
-		"twig/extensions" : "1.0.*",
+		"twig/extensions" : "~1.0",
 		"php" : ">=5.4",
-		"sensio/generator-bundle" : "2.3.*",
-		"symfony/monolog-bundle" : "2.3.*",
-		"sensio/framework-extra-bundle" : "2.3.*",
-		"sensio/distribution-bundle" : "2.3.*",
-		"doctrine/doctrine-bundle" : "1.2.*"
+		"sensio/generator-bundle" : "~2.3",
+		"symfony/monolog-bundle" : "~2.4",
+		"sensio/framework-extra-bundle" : "~3.0",
+		"sensio/distribution-bundle" : "~2.3",
+		"doctrine/doctrine-bundle" : "~1.2"
 	},
 	"autoload" : {
 		"psr-0" : {
