@@ -32,6 +32,8 @@ patlenain_gas:
     import:
       formatAttendu:  "Le format attendu du fichier est (avec une ligne d'entête) :"
       title:  Import des adhérents
+      erreur:
+        nombreChampsIncorrect:  "Ligne %ligne% : Nombre de champs incorrect"
   annee:
     libelle:  Libellé
     confirmDelete:  Voulez-vous vraiment supprimer cette année ?

@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManager;
 use Patlenain\GasBundle\Entity\Adherent;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Translation\Translator;
+use Patlenain\GasBundle\Exception\ImportException;
 
 class AdherentManager {
 	/**
@@ -148,37 +149,51 @@ class AdherentManager {
 	}
 
 	/**
+	 * @param Annee $annee
 	 * @param UploadedFile $fichier
+	 * @param array $erreurs
 	 * @return number
 	 */
-	public function importAdherents($annee, $fichier) {
+	public function importAdherents($annee, $fichier, &$erreurs) {
 		$this->em->beginTransaction();
 		try {
 			$nbLignes = 0;
 			$handle = fopen($fichier->getRealPath(), "r");
 			$headers = fgetcsv($handle);
 			while (($data = fgetcsv($handle))) {
-				$adherent = new Adherent();
-				$adherent->setNom($data[0]);
-				$adherent->setPrenom($data[1]);
-				$adherent->setEmail($data[2]);
-				$adherent->setAdresse($data[3]);
-				$adherent->setCodePostal($data[4]);
-				$adherent->setVille($data[5]);
-				$adherent->setNumeroFixe($data[6]);
-				$adherent->setNumeroPortable($data[7]);
-				$dateNaissance = DateTime::createFromFormat("d/m/Y", $data[8]);
-				$adherent->setDateNaissance($dateNaissance);
-				$dateAdhesion = null;
-				if ($data[9]) {
-					$dateAdhesion = DateTime::createFromFormat("d/m/Y", $data[9]);
+				if (count($data) != 10) {
+					array_push($erreurs,
+							$this->translator->trans('patlenain_gas.adherent.import.erreur.nombreChampsIncorrect',
+								array('%ligne%' => $nbLignes + 1)));
 				}
-				$adherent->setDateNaissance($dateNaissance);
-				$adherent->setAnnee($annee);
-				$this->em->persist($adherent);
+				else {
+					$adherent = new Adherent();
+					$adherent->setNom($data[0]);
+					$adherent->setPrenom($data[1]);
+					$adherent->setEmail($data[2]);
+					$adherent->setAdresse($data[3]);
+					$adherent->setCodePostal($data[4]);
+					$adherent->setVille($data[5]);
+					$adherent->setNumeroFixe($data[6]);
+					$adherent->setNumeroPortable($data[7]);
+					$dateNaissance = DateTime::createFromFormat("d/m/Y", $data[8]);
+					$adherent->setDateNaissance($dateNaissance);
+					$dateAdhesion = null;
+					if ($data[9]) {
+						$dateAdhesion = DateTime::createFromFormat("d/m/Y", $data[9]);
+					}
+					$adherent->setDateNaissance($dateNaissance);
+					$adherent->setAnnee($annee);
+					$this->em->persist($adherent);
+				}
 				$nbLignes++;
 			}
-			$this->em->commit();
+			if (count($erreurs) > 0) {
+				$this->em->rollback();
+			}
+			else {
+				$this->em->commit();
+			}
 			fclose($handle);
 		}
 		catch (\Exception $e) {

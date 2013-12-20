@@ -229,10 +229,18 @@ class AdherentController extends Controller
 		$form->submit($request, false);
     	if ($form->isValid()) {
     		$data = $form->getData();
+    		$erreurs = array();
     		$nbAdherents = $this->get('patlenain_gas.adherent_manager')
-    			->importAdherents($derniereAnnee, $data['fichier']);
-    		$this->get('session')->getFlashBag()->add('notice', 'Adhérents importés : '.$nbAdherents);
-    		$this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
+    			->importAdherents($derniereAnnee, $data['fichier'], $erreurs);
+    		if (count($erreurs) > 0) {
+    			foreach ($erreurs as $erreur) {
+					$this->get('session')->getFlashBag()->add('error', $erreur);
+				}
+	    	}
+	    	else {
+    			$this->get('session')->getFlashBag()->add('notice', 'Adhérents importés : '.$nbAdherents);
+	    		$this->redirect($this->generateUrl('patlenain_gas_adherent_list'));
+    		}
     	}
 		return array('form' => $form->createView());
 	}
