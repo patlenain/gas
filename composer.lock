@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cb63694457d83f1a5fc3e1f610c59c64",
+    "hash": "11766baca9ea131d13f3f27a5e4e4d76",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1294,22 +1294,21 @@
         },
         {
             "name": "patlenain/gas-jquery",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "target-dir": "Patlenain/GasJQueryBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jquery.git",
-                "reference": "6207c59acd226f98530bcd64a0109a7724dcdc80"
+                "reference": "ac4c5e1722eeba026f781e103c310f96f46ba34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/6207c59acd226f98530bcd64a0109a7724dcdc80",
-                "reference": "6207c59acd226f98530bcd64a0109a7724dcdc80",
+                "url": "https://api.github.com/repos/patlenain/gas-jquery/zipball/ac4c5e1722eeba026f781e103c310f96f46ba34b",
+                "reference": "ac4c5e1722eeba026f781e103c310f96f46ba34b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
-                "symfony/framework-bundle": ">=2.3"
+                "php": ">=5.4"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1330,32 +1329,31 @@
                 }
             ],
             "description": "Module JQuery pour GAS",
-            "homepage": "http://www.legurun.org/projects/gas",
+            "homepage": "https://github.com/patlenain/gas",
             "keywords": [
                 "gas",
                 "jquery"
             ],
-            "time": "2013-11-02 11:09:41"
+            "time": "2014-06-28 01:20:25"
         },
         {
             "name": "patlenain/gas-jqueryui",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "target-dir": "Patlenain/GasJQueryUIBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/patlenain/gas-jqueryui.git",
-                "reference": "8d32ad353226665b2bef338c2972f1474b1c569a"
+                "reference": "796b3c766bd663b4615467e93a7f28c7e96ff7da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/8d32ad353226665b2bef338c2972f1474b1c569a",
-                "reference": "8d32ad353226665b2bef338c2972f1474b1c569a",
+                "url": "https://api.github.com/repos/patlenain/gas-jqueryui/zipball/796b3c766bd663b4615467e93a7f28c7e96ff7da",
+                "reference": "796b3c766bd663b4615467e93a7f28c7e96ff7da",
                 "shasum": ""
             },
             "require": {
-                "patlenain/gas-jquery": ">=1.0",
-                "php": ">=5.4",
-                "symfony/framework-bundle": ">=2.3"
+                "patlenain/gas-jquery": "~1",
+                "php": ">=5.4"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -1376,12 +1374,12 @@
                 }
             ],
             "description": "Module JQueryUI pour GAS",
-            "homepage": "http://www.legurun.org/projects/gas",
+            "homepage": "https://github.com/patlenain/gas",
             "keywords": [
                 "gas",
                 "jQueryUI"
             ],
-            "time": "2013-11-02 11:08:58"
+            "time": "2014-06-28 05:17:45"
         },
         {
             "name": "phpoption/phpoption",
@@ -1575,17 +1573,17 @@
         },
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "4a7b126e9c22f858e3584b19ddce6e5bdd7677ee"
+                "reference": "8b7a33aa3d22388443b6de0b0cf184122e9f60d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/4a7b126e9c22f858e3584b19ddce6e5bdd7677ee",
-                "reference": "4a7b126e9c22f858e3584b19ddce6e5bdd7677ee",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/8b7a33aa3d22388443b6de0b0cf184122e9f60d2",
+                "reference": "8b7a33aa3d22388443b6de0b0cf184122e9f60d2",
                 "shasum": ""
             },
             "require": {
@@ -1615,11 +1613,13 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2013-08-21 18:09:35"
+            "time": "2014-04-28 14:01:06"
         },
         {
             "name": "swiftmailer/swiftmailer",
