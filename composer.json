@@ -8,10 +8,8 @@
 			"role" : "Developer"
 		}
 	],
-	"homepage" : "http://www.legurun.org/projects/gas",
-	"license" : [
-		"GPL-3.0+"
-	],
+	"homepage" : "https://github.com/patlenain/gas",
+	"license" : "GPL-3.0+",
 	"require" : {
 		"symfony/symfony" : "~2.4",
 		"doctrine/doctrine-fixtures-bundle" : "~2.2",
@@ -38,20 +36,20 @@
 	"minimum-stability" : "stable",
 	"support" : {
 		"source" : "https://github.com/patlenain/gas.git",
-		"issues" : "http://www.legurun.org/projects/gas"
+		"issues" : "https://github.com/patlenain/gas/issues"
 	},
 	"config" : {
 		"bin-dir" : "bin"
 	},
 	"scripts" : {
-		"post-update-cmd" : [
+		"post-install-cmd" : [
 			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
 		],
-		"post-install-cmd" : [
+		"post-update-cmd" : [
 			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
 			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
