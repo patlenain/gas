@@ -5,7 +5,7 @@ GAS - Gestion d'Association Simple
 # Objectif
 
 
-L'objectif de [GAS](http://www.legurun.org/projects/gas) est de
+L'objectif de [GAS](https://github.com/patlenain/gas) est de
 gérer une petite association. Gérer une association comprend à
 la base gérer la liste des membres d'une année en cours.
 
@@ -59,19 +59,6 @@ GAS sera écrit en *PHP*, avec le framework *Symfony 2*.
 ## Base de données
 
 La base cible est *MySQL*, mais on pourra utiliser *PostgreSQL*, *SQLite*, etc.
-
-## Méthode de développement
-
-GAS devra suivre la méthode de développement *TDD* (Test Driven Developpement).
-
-## Site web
-
-Le [site web](http://wwww.legurun.org/projects/gas/) sera hébergé avec *Trac*,
-en utilisant le wiki intégré (pour la documentation) et le suivi des bugs.
-
-La documentation embarquée sera uniquement les instructions technique
-d'installation, de mise à jour et de configuration. Elle sera écrite en
-syntaxe *MarkDown*.
 
 ## Licence
 
