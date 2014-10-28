@@ -9,9 +9,7 @@ include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 
 build/gas-webapp::
 	# get composer
-	#curl -sS https://getcomposer.org/installer | php -- --install-dir=$(DEB_BUILDDIR)
-	php $(DEB_SRCDIR)/../installer
-	export COMPOSER_CACHE_DIR=$(DEB_SRCDIR)/../composer-cache
+	curl -sS https://getcomposer.org/installer | php
 	php composer.phar install --no-dev --optimize-autoloader --no-interaction
 	rm -fr $(DEB_SRCDIR)/app/cache/dev/ $(DEB_SRCDIR)/app/logs/dev.log
 
