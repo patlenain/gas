@@ -1,0 +1,10 @@
+/var/log/gas-webapp/prod.log
+{
+	create 0640 www-data adm
+	compress
+	delaycompress
+	missingok
+	notifempty
+	rotate 52
+	weekly
+}

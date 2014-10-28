@@ -1,0 +1,21 @@
+Source: gas-webapp
+Section: web
+Priority: extra
+Maintainer: Patrice Le Gurun <patrice@legurun.org>
+Build-Depends: cdbs (>= 0.4.85~),
+ debhelper (>= 8~),
+ dh-buildinfo,
+ quilt,
+ patchutils (>= 0.2.25),
+ cdbs (>= 0.4.27), po-debconf, curl, php5-cli (>= 5.4)
+Standards-Version: 3.9.3
+Homepage: https://github.com/patlenain/gas
+
+Package: gas-webapp
+Architecture: all
+Depends: dbconfig-common, ucf, apache2,
+ php5 (>= 5.4), php5-cli (>= 5.4), php5-mysql, php5-intl,
+ ${misc:Depends}
+Recommends: mysql-client
+Description: Gestion d'association simple
+ Application web pour gérer simplement une association

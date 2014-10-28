@@ -1,0 +1,11 @@
+app/*.php app/console var/lib/gas-webapp/app
+app/bootstrap.php.cache var/lib/gas-webapp/app
+app/cache var/lib/gas-webapp/app
+app/config/config.yml app/config/routing.yml app/config/security.yml var/lib/gas-webapp/app/config
+app/config/config_prod.yml app/config/parameters.yml.dist var/lib/gas-webapp/app/config
+app/config/parameters.yml.dist etc/gas-webapp
+app/Resources var/lib/gas-webapp/app
+debian/conf/* etc/gas-webapp
+src/Patlenain usr/share/gas-webapp/src
+vendor usr/share/gas-webapp
+web/app.php web/favicon.ico web/.htaccess web/robots.txt var/lib/gas-webapp/web

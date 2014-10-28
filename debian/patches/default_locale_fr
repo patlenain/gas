@@ -1,0 +1,13 @@
+--- a/app/config/parameters.yml.dist
++++ b/app/config/parameters.yml.dist
+@@ -11,7 +11,7 @@
+     mailer_user:       ~
+     mailer_password:   ~
+ 
+-    locale:            en
++    locale:            fr
+     secret:            ThisTokenIsNotSoSecretChangeIt
+ 
+-    association:       Association
+\ No newline at end of file
++    association:       Association

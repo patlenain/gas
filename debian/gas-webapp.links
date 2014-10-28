@@ -1,0 +1,4 @@
+etc/gas-webapp/parameters.yml var/lib/gas-webapp/app/config/parameters.yml
+etc/gas-webapp/parameters.yml.dist var/lib/gas-webapp/app/config/parameters.yml.dist
+usr/share/gas-webapp/vendor var/lib/gas-webapp/vendor
+usr/share/gas-webapp/src var/lib/gas-webapp/src

@@ -1,0 +1,10 @@
+Change log file location
+--- a/app/config/config_prod.yml
++++ b/app/config/config_prod.yml
+@@ -19,5 +19,5 @@
+             handler:      nested
+         nested:
+             type:  stream
+-            path:  %kernel.logs_dir%/%kernel.environment%.log
++            path:  /var/log/gas-webapp/prod.log
+             level: debug

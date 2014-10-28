@@ -1,0 +1,7 @@
+Template: gas-webapp/association
+Type: string
+_Description: Organization's name :
+
+Template: gas-webapp/secret
+Type: password
+_Description: for internal use.

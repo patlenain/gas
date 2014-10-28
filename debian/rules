@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+
+build/gas-webapp::
+	# get composer
+	#curl -sS https://getcomposer.org/installer | php -- --install-dir=$(DEB_BUILDDIR)
+	php $(DEB_SRCDIR)/../installer
+	export COMPOSER_CACHE_DIR=$(DEB_SRCDIR)/../composer-cache
+	php composer.phar install --no-dev --optimize-autoloader --no-interaction
+	rm -fr $(DEB_SRCDIR)/app/cache/dev/ $(DEB_SRCDIR)/app/logs/dev.log
+
+install/gas-webapp::
+	# Database related scripts
+	cat $(DEB_SRCDIR)/src/db/mysql/full_$(DEB_UPSTREAM_VERSION).sql \
+	        $(DEB_SRCDIR)/src/db/mysql/initdata_$(DEB_UPSTREAM_VERSION).sql\
+	      > $(DEB_DESTDIR)/usr/share/dbconfig-common/data/gas-webapp/install/mysql
+	chmod 640 $(DEB_DESTDIR)/usr/share/dbconfig-common/data/gas-webapp/install/mysql
+	# Purge git-related files
+	find $(DEB_SRCDIR)/vendor -name '.gitignore' -print0 | xargs -r0 rm
+	find $(DEB_SRCDIR)/vendor -name '.gitkeep' -print0 | xargs -r0 rm
+	# Remove execution flag
+	find $(DEB_SRCDIR)/vendor -type f -print0 | xargs -r0 chmod -x
+
+cleanbuilddir::
+	-rm -fr $(DEB_SRCDIR)/composer.phar
+	-rm -fr $(DEB_SRCDIR)/vendor
+	-rm -fr $(DEB_SRCDIR)/bin/doctrine $(DEB_SRCDIR)/bin/doctrine.php
+	-rm -fr $(DEB_SRCDIR)/app/cache/prod/ $(DEB_SRCDIR)/app/logs/prod.log
+	-rm -fr $(DEB_SRCDIR)/app/cache/dev/ $(DEB_SRCDIR)/app/logs/dev.log
+	-rm -fr $(DEB_SRCDIR)/app/bootstrap.php.cache
+	-rm -fr $(DEB_SRCDIR)/app/config/parameters.yml
+	-rm -fr $(DEB_SRCDIR)/web/bundles/*
+
+clean::
+	debconf-updatepo

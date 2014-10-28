@@ -1,0 +1,3 @@
+gas-webapp binary: executable-not-elf-or-script
+gas-webapp binary: extra-license-file
+gas-webapp binary: embedded-javascript-library

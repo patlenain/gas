@@ -1,0 +1,10 @@
+usr/share/gas-webapp
+usr/share/gas-webapp/src
+usr/share/dbconfig-common/data/gas-webapp/install
+usr/share/dbconfig-common/data/gas-webapp/update/mysql
+etc/gas-webapp
+var/lib/gas-webapp
+var/lib/gas-webapp/app/cache
+var/lib/gas-webapp/app/config
+var/lib/gas-webapp/app/Resources
+var/log/gas-webapp

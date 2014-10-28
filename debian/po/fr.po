@@ -1,0 +1,31 @@
+# Traducation debconf pour le paquet gas.
+# Copyright (C) 2014
+# This file is distributed under the same license as the gas package.
+# Patrice Le Gurun <patrice@legurun.org>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gas\n"
+"Report-Msgid-Bugs-To: gas-webapp@packages.debian.org\n"
+"POT-Creation-Date: 2014-10-28 01:55+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Patrice Le Gurun <patrice@legurun.org>\n"
+"Language-Team: fr <patrice@legurun.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../templates:1001
+#, fuzzy
+#| msgid "Organization's name"
+msgid "Organization's name :"
+msgstr "Nom de l'association :"
+
+#. Type: password
+#. Description
+#: ../templates:2001
+msgid "for internal use."
+msgstr ""
